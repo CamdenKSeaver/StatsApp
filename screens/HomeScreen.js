@@ -5,11 +5,11 @@ import { StyleSheet, Button, View } from 'react-native';
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <MyButton 
+      <Button 
         title="Navigate to second screen with french"
         onPress={() => navigation.navigate("Second", { language: "french" })}
       />
-      <MyButton 
+      <Button 
         title="Navigate to second screen with english"
         onPress={() => navigation.navigate("Second", { language: "english" })}
       />
