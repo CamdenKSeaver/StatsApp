@@ -17,11 +17,11 @@ export default function App() {
           options={{title: "Welcome"}}
         />
         <Stack.Screen 
-          name="Second"
+          name="Create Team"
           component={CreateTeam}
         />
         <Stack.Screen 
-          name="Third"
+          name="New Game"
           component={NewGame}
           options={{headerShown: false}}
         />

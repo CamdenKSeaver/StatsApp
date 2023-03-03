@@ -5,12 +5,12 @@ export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Button 
-        title="Navigate to second screen with french"
-        onPress={() => navigation.navigate("Second", { language: "french" })}
+        title="Create Team"
+        onPress={() => navigation.navigate("Create Team", { language: "french" })}
       />
       <Button 
-        title="Navigate to second screen with english"
-        onPress={() => navigation.navigate("Second", { language: "english" })}
+        title="New Game"
+        onPress={() => navigation.navigate("New Game", { language: "english" })}
       />
       <StatusBar style="auto" />
     </View>
