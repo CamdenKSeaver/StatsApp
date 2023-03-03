@@ -1,10 +1,9 @@
-import HomeScreen from "./App/screens/HomeScreen";
-import CreateTeam from "./App/screens/CreateTeam";
-import NewGame from "./App/screens/NewGame";
-
+import HomeScreen from "./screens/HomeScreen";
+import CreateTeam from "./screens/CreateTeam";
+import NewGame from "./screens/NewGame";
+import { NavigationContainer } from "@react-navigation/native";
+import 'react-native-gesture-handler';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-import MyButton from './App/components/MyButton'
 
 const Stack = createNativeStackNavigator();
 
@@ -24,7 +23,7 @@ export default function App() {
         <Stack.Screen 
           name="Third"
           component={NewGame}
-          //options={{headerShown: false}}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
