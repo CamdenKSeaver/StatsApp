@@ -9,6 +9,7 @@ export default function CreateTeam({ navigation, route }) {
     <View style={styles.container}>
       <Text>{greeting}</Text>
       <Button 
+      
         title='Go to Third Screen'
         onPress={() => navigation.push("Third")}
       />
