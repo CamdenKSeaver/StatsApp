@@ -2,14 +2,13 @@ import { isColorSupported } from 'picocolors';
 import React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, TouchableHighlight} from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
-
 import colors from '../config/colors';
 
 
 function MyButton({title, onPress,}) {
   return (
     <TouchableHighlight
-      underlaycolor = {colors.primaryBlue}
+      underlayColor = {colors.primaryBlue}
       style={[styles.button]}
       onPress={onPress}>
       

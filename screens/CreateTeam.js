@@ -1,25 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { StackActions } from '@react-navigation/native';
+import MyButton from '../App/components/MyButton';
 
 export default function CreateTeam({ navigation, route }) {
-  let language = route.params.language;
-  let greeting = language === "french" ? "Bonjour" : "Hello";
   return (
     <View style={styles.container}>
-      <Text>{greeting}</Text>
-      <Button 
       
-        title='Go to Third Screen'
+      <MyButton 
+        title='Save Team'
         onPress={() => navigation.push("Third")}
       />
-      <Button 
-        title='Go to Third Screen with Replace'
+      <MyButton 
+        title='Back'
         onPress={() => {
-          navigation.dispatch(
-            StackActions.replace("Third")
-          );
-        }}
+          navigation.navigate("HomeScreen")}}
       />
       <StatusBar style="auto" />
     </View>
@@ -32,5 +27,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    
   },
 });
