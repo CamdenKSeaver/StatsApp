@@ -4,6 +4,7 @@ import NewGame from "./screens/NewGame";
 import { NavigationContainer } from "@react-navigation/native";
 import 'react-native-gesture-handler';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import colors from "./App/config/colors";
 
 const Stack = createNativeStackNavigator();
 

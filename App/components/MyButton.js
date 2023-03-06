@@ -1,33 +1,46 @@
+import { isColorSupported } from 'picocolors';
 import React from 'react';
-import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity, TouchableHighlight} from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+
+import colors from '../config/colors';
 
 
-function MyButton({title, color, onPress, width}) {
+function MyButton({title, onPress,}) {
   return (
-    <TouchableOpacity
-      style={[styles.button, {backgroundColor: color, width: width} ]}
+    <TouchableHighlight
+      underlaycolor = {colors.primaryBlue}
+      style={[styles.button]}
       onPress={onPress}>
+      
+      
+      
       <Text style={styles.text}>
       {title} 
+      
       </Text >
-    </TouchableOpacity>
+     
+    </TouchableHighlight>
   );
 }
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#ee0000',
-    borderRadius: 25,
+    backgroundColor: '#ffffff',
+    borderWidth: 3.5,
+    borderColor: colors.primaryBlue,
+    borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 12,
-    width: '50%',
+    width: 200,
+    height: 70,
     marginVertical: 10,
   },
   
   text: {
     fontSize: 14,
-    color: 'white',
+    color: colors.primaryBlue,
     fontWeight: 'bold',
     textAlign: 'center',
   },
