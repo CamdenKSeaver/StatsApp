@@ -8,16 +8,10 @@ import colors from '../config/colors';
 
 function MyButton({title, onPress,}) {
   return (
-    <TouchableHighlight
-      underlaycolor = {colors.primaryBlue}
-      style={[styles.button]}
-      onPress={onPress}>
-      
-      
-      
+    <TouchableHighlight style={[styles.button]} onPress={onPress} underlayColor = {colors.primaryBlue}>
+  
       <Text style={styles.text}>
       {title} 
-      
       </Text >
      
     </TouchableHighlight>

@@ -8,11 +8,15 @@ export default function HomeScreen({ navigation }) {
     <View style={styles.container}>
       <MyButton 
         title="Create Team"
-        onPress={() => navigation.navigate("Create Team", { language: "french" })}
+        onPress={() => navigation.navigate("Create Team")}
       />
       <MyButton 
         title="New Game"
-        onPress={() => navigation.navigate("New Game", { language: "english" })}
+        onPress={() => navigation.navigate("New Game")}
+      />
+      <MyButton 
+        title="View Games"
+        onPress={() => navigation.navigate("New Game")}
       />
       <StatusBar style="auto" />
     </View>
