@@ -33,8 +33,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 12,
-    width: 200,
-    height: 70,
+    width: 175,
+    height: 50,
     marginVertical: 10,
   },
   
