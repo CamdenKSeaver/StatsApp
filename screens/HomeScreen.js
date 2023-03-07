@@ -8,16 +8,17 @@ import {useImage} from 'react-image'
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <View style={styles.container}>
-      <Image
-      style= {{width: 330, height:55}}
+    
+        <Image
+          style= {{width: 330, height:55, marginTop: 50}}
           source={require('../App/assets/images/logo.png')} 
-          />
-          </View>
+        
+        />
+          
       <MyButton 
         title="Create Team"
         onPress={() => navigation.navigate("Create Team")}
-      />
+        />
       <MyButton 
         title="New Game"
         onPress={() => navigation.navigate("New Game")}
@@ -36,10 +37,9 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-   
     flexDirection: 'column',
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+   
   },
 });
