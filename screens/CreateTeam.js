@@ -9,12 +9,12 @@ export default function CreateTeam({ navigation, route }) {
       
       <MyButton 
         title='Save Team'
-        onPress={() => navigation.push("Third")}
+        onPress={() => navigation.push("Home")}
       />
       <MyButton 
         title='Back'
         onPress={() => {
-          navigation.navigate("HomeScreen")}}
+          navigation.navigate("Home")}}
       />
       <StatusBar style="auto" />
     </View>

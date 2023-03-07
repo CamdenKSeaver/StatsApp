@@ -15,11 +15,12 @@ export default function App() {
         <Stack.Screen 
           name="Home"
           component={HomeScreen}
-          options={{title: "Welcome"}}
+          options={{headerShown: false}}
         />
         <Stack.Screen 
           name="Create Team"
           component={CreateTeam}
+          options={{headerShown: false}}
         />
         <Stack.Screen 
           name="New Game"
