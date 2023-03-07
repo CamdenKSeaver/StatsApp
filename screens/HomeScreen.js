@@ -3,6 +3,7 @@ import { StyleSheet, Button, View } from 'react-native';
 import MyButton from '../App/components/MyButton';
 
 
+
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
@@ -13,10 +14,12 @@ export default function HomeScreen({ navigation }) {
       <MyButton 
         title="New Game"
         onPress={() => navigation.navigate("New Game")}
+
       />
       <MyButton 
         title="View Games"
         onPress={() => navigation.navigate("New Game")}
+
       />
       <StatusBar style="auto" />
     </View>
