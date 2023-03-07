@@ -5,13 +5,15 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import colors from '../config/colors';
 
 
-function MyButton({title, onPress,}) {
+function MyButton({title, onPress}) {
   return (
 
     <TouchableHighlight style={[styles.button]} 
       underlayColor = {colors.primaryBlue}
       style={[styles.button]}
-      onPress={onPress}>
+      onPress={onPress}
+   
+      >
       
       
       
@@ -33,8 +35,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 12,
-    width: 175,
-    height: 50,
+    height: 60,
+    width: 150,
     marginVertical: 10,
   },
   
