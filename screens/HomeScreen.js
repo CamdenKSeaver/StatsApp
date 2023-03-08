@@ -10,23 +10,34 @@ export default function HomeScreen({ navigation }) {
     <View style={styles.container}>
     
         <Image
-          style= {{width: 330, height:55, marginTop: 50}}
+          style= {{width: 330, height:55, marginTop: '20%'}}
           source={require('../App/assets/images/logo.png')} 
         
         />
-          
+    
       <MyButton 
         title="Create Team"
         onPress={() => navigation.navigate("Create Team")}
+        width ={'60%'}
+        height ={'9%'}
+        marginTop = {'30%'}
+       
         />
+     
       <MyButton 
         title="New Game"
         onPress={() => navigation.navigate("New Game")}
+        width ={'60%'}
+        height ={'9%'}
+        marginTop = {'10%'}
 
       />
       <MyButton 
         title="View Games"
         onPress={() => navigation.navigate("New Game")}
+        width ={'60%'}
+        height ={'9%'}
+        marginTop = {'10%'}
 
       />
       <StatusBar style="auto" />
