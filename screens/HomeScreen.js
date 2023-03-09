@@ -10,7 +10,7 @@ export default function HomeScreen({ navigation }) {
     <View style={styles.container}>
     
         <Image
-          style= {{width: 330, height:55, marginTop: '20%'}}
+          style= {{width: '85%', height:'8%', marginTop: '20%'}}
           source={require('../App/assets/images/logo.png')} 
         
         />
@@ -34,7 +34,7 @@ export default function HomeScreen({ navigation }) {
       />
       <MyButton 
         title="View Games"
-        onPress={() => navigation.navigate("New Game")}
+        onPress={() => navigation.navigate("View Game")}
         width ={'60%'}
         height ={'9%'}
         marginTop = {'10%'}

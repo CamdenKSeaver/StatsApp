@@ -7,9 +7,9 @@ import {useImage} from 'react-image'
 export default function CreateTeam({ navigation, route }) {
   return (
     <View style={styles.container}>
-      <View style={styles.imageContainer}>
+      <View style={[styles.imageContainer,{width: '100%', height: '100%'}]}>
         <Image
-      style= {{width: 330, height:55}}
+      style= {{width: '90%', height:'50%',marginTop: '4%'}}
           source={require('../App/assets/images/logo.png')} 
             />
             </View>
