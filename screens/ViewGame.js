@@ -20,14 +20,14 @@ export default function ViewGame({ navigation, route }) {
         <MyButton 
           title='Delete Games'
           width= {'40%'}
-          height= {'50%'}
+          height= {'55%'}
           
         />
        
         <MyButton 
           title='Back'
           width= {'40%'}
-          height= {'50%'}
+          height= {'55%'}
           marginLeft= {'3.33%'}
           onPress={() => {
             navigation.navigate("Home")}}
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center', 
-    paddingBottom: '135%',
+    marginBottom: '135%',
  
   },
 

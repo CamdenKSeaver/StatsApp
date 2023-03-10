@@ -1,11 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Button, View, Image } from 'react-native';
+import { StyleSheet, Button, View, Image, TextInput } from 'react-native';
 import MyButton from '../App/components/MyButton';
 import {useImage} from 'react-image'
-
+import React, { useState } from 'react';
+import Player from '../App/components/Player';
 
 
 export default function HomeScreen({ navigation }) {
+  const [playerName, setPlayerName] = useState('');
+  const [players, setPlayers] = useState([]);
+
+  const handleCreatePlayer = () => {
+    const newPlayer = new Player(playerName, 0);
+    setPlayers([...players, newPlayer]);
+    setPlayerName('');
+  }
   return (
     <View style={styles.container}>
     
@@ -40,6 +49,17 @@ export default function HomeScreen({ navigation }) {
         marginTop = {'10%'}
 
       />
+          <View>
+      <TextInput
+        value={playerName}
+        onChangeText={setPlayerName}
+        placeholder="Enter player name"
+      />
+      <Button
+        title="Create Player"
+        onPress={handleCreatePlayer}
+      />
+    </View>
       <StatusBar style="auto" />
     </View>
   );
