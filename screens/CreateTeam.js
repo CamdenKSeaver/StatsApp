@@ -3,8 +3,11 @@ import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
 import { StackActions } from '@react-navigation/native';
 import MyButton from '../App/components/MyButton';
 import {useImage} from 'react-image'
+import MyTextInput from '../App/components/MyTextInput';
 
 export default function CreateTeam({ navigation, route }) {
+
+  
   return (
     <View style={styles.container}>
       <View style={[styles.imageContainer,{width: '100%', height: '100%'}]}>
@@ -32,9 +35,10 @@ export default function CreateTeam({ navigation, route }) {
             navigation.navigate("Home")}}
         />
       </View>
-      <View style={styles.teamContainer}>
-        <Text>Team Name</Text>
-      </View>
+      <MyTextInput>
+        
+      </MyTextInput>
+
       <StatusBar style="auto" />
     </View>
   );
@@ -46,6 +50,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center', 
+    flexDirection: 'column',
   },
 
   buttonContainer: {
@@ -74,14 +79,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
-  space: {
-    width: 20, 
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
   },
 
-  teamContainer: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
+
 
 });
