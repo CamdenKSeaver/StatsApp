@@ -4,51 +4,86 @@ import { StackActions } from '@react-navigation/native';
 import MyButton from '../App/components/MyButton';
 import {useImage} from 'react-image'
 import MyTextInput from '../App/components/MyTextInput';
+import Player from '../App/components/Player';
+import React, { useState } from 'react';
 
 export default function CreateTeam({ navigation, route }) {
+  const [playerName, setPlayerName] = useState('');
+  const [players, setPlayers] = useState([]);
 
+  const handleCreatePlayer = () => {
+    const newPlayer = new Player(playerName, 0);
+    setPlayers([...players, newPlayer]);
+    setPlayerName('');
+  }
   
   return (
+    <View style = {styles.wholeConatiner}>
     <View style={styles.container}>
      
         <Image
-          style= {{width: '90%', height:'9%',marginTop: '10%'}}
+          style= {{width: '90%', height:'30%',marginTop: '8%'}}
           source={require('../App/assets/images/logo.png')} 
           
         />
   
       <View style={[styles.lineContainer, {marginTop: '6%'}]}>
         </View>
-      <View style={styles.buttonContainer}>
+      <View style={[styles.buttonContainer,{marginTop: '5%'}]}>
         <MyButton 
           title='Save Team'
           width= {'40%'}
-          height= {'50%'}
+          height= {'100%'}
           onPress={() => navigation.push("Home")}
         />
        
         <MyButton 
           title='Back'
           width= {'40%'}
-          height= {'50%'}
+          height= {'100%'}
           marginLeft= {'3.33%'}
           onPress={() => {
             navigation.navigate("Home")}}
         />
+        
       </View>
       
 
       <StatusBar style="auto" />
+      
     </View>
+    <View style = {styles.playersContainer}>
+        <TextInput
+          marginLeft ='10%'
+          value={playerName}
+          onChangeText={setPlayerName}
+          placeholder="Enter player name"
+        />
+        <MyButton
+           marginLeft = '10%'
+          title="Create Player"
+          onPress={handleCreatePlayer}
+        />
+      </View>
+    </View>
+    
+    
   );
 }
-
+  
 const styles = StyleSheet.create({
-  container: {
+  wholeConatiner: {
+    height:'100%',
+    width: '100%',
     
+    backgroundColor: '#fff'
+
+  },
+  container: {
+  
+    height:'30%',
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center', 
     flexDirection: 'column',
   },
 
@@ -63,7 +98,8 @@ const styles = StyleSheet.create({
   },
 
   imageContainer: {
-    
+    height:'50%',
+    width: '100%',
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center', 
@@ -71,19 +107,20 @@ const styles = StyleSheet.create({
   },
 
   lineContainer: {
-    height: '.5%',
+    height: '2%',
     width: '90%',
     backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
   },
 
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-  },
+  playersContainer:{
+    height:'100%',
+    width:'100%',
+    backgroundColor: '#fff',
+    alignItems: 'flex-start',
+    flexDirection: 'column',
+  }
 
 
 
