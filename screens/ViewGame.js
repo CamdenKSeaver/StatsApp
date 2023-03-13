@@ -9,13 +9,15 @@ export default function ViewGame({ navigation, route }) {
     <View style={styles.container}>
       
       <Image
-          style= {{width: '90%', height:'8%',marginTop: '10%'}}
+          style= {{width: '90%', height:'9%',marginTop: '10%'}}
           source={require('../App/assets/images/logo.png')} 
           
         />
            
-           <View style={[styles.lineContainer, {marginTop: '6%'}]}>
-        </View>
+    <View style={[styles.lineContainer, {marginTop: '6%'}]}>
+    </View>
+
+
       <View style={styles.buttonContainer}>
         <MyButton 
           title='Delete Games'
@@ -43,14 +45,14 @@ export default function ViewGame({ navigation, route }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center', 
   },
 
   buttonContainer: {
-    flex: .75,
+   
     backgroundColor: '#fff',
     alignItems: 'center',
     flexDirection: 'row',
@@ -60,7 +62,7 @@ const styles = StyleSheet.create({
   },
 
   imageContainer: {
-    flex: 1,
+   
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center', 
@@ -68,8 +70,8 @@ const styles = StyleSheet.create({
   },
 
   lineContainer: {
-    height: 5,
-    width: 330,
+    height: '.5%',
+    width: '90%',
     backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',

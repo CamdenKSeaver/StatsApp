@@ -10,13 +10,14 @@ export default function CreateTeam({ navigation, route }) {
   
   return (
     <View style={styles.container}>
-      <View style={[styles.imageContainer,{width: '100%', height: '100%'}]}>
+     
         <Image
-      style= {{width: '90%', height:'50%',marginTop: '4%'}}
+          style= {{width: '90%', height:'9%',marginTop: '10%'}}
           source={require('../App/assets/images/logo.png')} 
-            />
-            </View>
-      <View style={styles.lineContainer}>
+          
+        />
+  
+      <View style={[styles.lineContainer, {marginTop: '6%'}]}>
         </View>
       <View style={styles.buttonContainer}>
         <MyButton 
@@ -35,9 +36,7 @@ export default function CreateTeam({ navigation, route }) {
             navigation.navigate("Home")}}
         />
       </View>
-      <MyTextInput>
-        
-      </MyTextInput>
+      
 
       <StatusBar style="auto" />
     </View>
@@ -46,7 +45,7 @@ export default function CreateTeam({ navigation, route }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center', 
@@ -54,7 +53,7 @@ const styles = StyleSheet.create({
   },
 
   buttonContainer: {
-    flex: .75,
+  
     backgroundColor: '#fff',
     alignItems: 'center',
     flexDirection: 'row',
@@ -64,7 +63,7 @@ const styles = StyleSheet.create({
   },
 
   imageContainer: {
-    flex: 1,
+    
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center', 
@@ -72,8 +71,8 @@ const styles = StyleSheet.create({
   },
 
   lineContainer: {
-    height: 5,
-    width: 330,
+    height: '.5%',
+    width: '90%',
     backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',

@@ -9,7 +9,7 @@ export default function ViewGame({ navigation, route }) {
     <View style={styles.container}>
      
         <Image
-          style= {{width: '90%', height:'8%',marginTop: '10%'}}
+          style= {{width: '90%', height:'9%',marginTop: '10%'}}
           source={require('../App/assets/images/logo.png')} 
           
         />
