@@ -3,14 +3,17 @@ import { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
 class Player {
-  constructor(name, score) {
+  constructor(name, number) {
     this.name = name;
-    this.score = score;
-  }
-
-  updateScore(points) {
-    this.score += points;
+    this.number = number;
+    
   }
 }
 
-export default Player;
+class Team {
+  constructor(players) {
+    this.players = players;
+  }
+}
+
+export { Player, Team };

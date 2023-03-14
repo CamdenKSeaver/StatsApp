@@ -4,21 +4,33 @@ import { StackActions } from '@react-navigation/native';
 import MyButton from '../App/components/MyButton';
 import {useImage} from 'react-image'
 import MyTextInput from '../App/components/MyTextInput';
-import Player from '../App/components/Player';
+import {Player, Team} from '../App/components/Player';
 import React, { useState } from 'react';
 
-export default function CreateTeam({ navigation, route }) {
-  const [playerName, setPlayerName] = useState('');
-  const [players, setPlayers] = useState([]);
 
-  const handleCreatePlayer = () => {
-    const newPlayer = new Player(playerName, 0);
-    setPlayers([...players, newPlayer]);
-    setPlayerName('');
-  }
+export default function CreateTeam({ navigation, route }) {
   
+  const [playerName, setPlayerName] = useState('');
+  const [playerNumber, setPlayerNumber] = useState('');
+
+  const [team, setTeam] = useState(null);
+
+  function handleCreateTeam() {
+    const player1 = new Player(playerName, playerNumber);
+    const player2 = new Player('John Doe', 25);
+    const player3 = new Player('Jane Doe', 27);
+    const players = [player1, player2, player3];
+    const newTeam = new Team(players);
+    setTeam(newTeam);
+  }
   return (
+
+
+
+
+
     <View style = {styles.wholeConatiner}>
+      
     <View style={styles.container}>
      
         <Image
@@ -52,19 +64,26 @@ export default function CreateTeam({ navigation, route }) {
       <StatusBar style="auto" />
       
     </View>
+    
     <View style = {styles.playersContainer}>
-        <TextInput
-          marginLeft ='10%'
-          value={playerName}
-          onChangeText={setPlayerName}
-          placeholder="Enter player name"
-        />
-        <MyButton
-           marginLeft = '10%'
-          title="Create Player"
-          onPress={handleCreatePlayer}
-        />
-      </View>
+    <View>
+      <TextInput
+        onChangeText={setPlayerName}
+        value={playerName}
+        placeholder="Player Name"
+      />
+      <TextInput
+        onChangeText={setPlayerNumber}
+        value={playerNumber}
+        placeholder="Player Number"
+      />
+      
+      <Button title="Create Team" onPress={handleCreateTeam} />
+      {team && (
+        <Text>{JSON.stringify(team)}</Text>
+      )}
+    </View>
+    </View>
     </View>
     
     
