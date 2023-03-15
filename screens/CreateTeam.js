@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, TextInput, ScrollView } from 'react-native';
 import { StackActions } from '@react-navigation/native';
 import MyButton from '../App/components/MyButton';
 import {useImage} from 'react-image'
@@ -29,7 +29,7 @@ export default function CreateTeam({ navigation, route }) {
 
 
 
-    <View style = {styles.wholeConatiner}>
+    <ScrollView style = {styles.wholeConatiner}>
       
     <View style={styles.container}>
      
@@ -81,10 +81,14 @@ export default function CreateTeam({ navigation, route }) {
       <Button title="Create Team" onPress={handleCreateTeam} />
       {team && (
         <Text>{JSON.stringify(team)}</Text>
+        
       )}
+      
+        
+      
     </View>
     </View>
-    </View>
+    </ScrollView>
     
     
   );
