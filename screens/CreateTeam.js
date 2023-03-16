@@ -6,6 +6,7 @@ import {useImage} from 'react-image'
 import MyTextInput from '../App/components/MyTextInput';
 import {Player, Team} from '../App/components/Player';
 import React, { useState } from 'react';
+import PlayerName from '../App/components/PlayerName';
 
 
 export default function CreateTeam({ navigation, route }) {
@@ -66,27 +67,33 @@ export default function CreateTeam({ navigation, route }) {
     </View>
     
     <View style = {styles.playersContainer}>
-    <View>
-      <TextInput
-        onChangeText={setPlayerName}
-        value={playerName}
-        placeholder="Player Name"
-      />
-      <TextInput
-        onChangeText={setPlayerNumber}
-        value={playerNumber}
-        placeholder="Player Number"
-      />
-      
-      <Button title="Create Team" onPress={handleCreateTeam} />
-      {team && (
-        <Text>{JSON.stringify(team)}</Text>
+
+
+    <View style = {styles.horizntal}>
+        <TextInput style = {styles.textBox}
+          onChangeText={setPlayerName}
+          placeholder='Athlete Name'
         
-      )}
+        />
       
-        
-      
+      <View style = {styles.textCont}>
+        <Text style = {styles.text}>#</Text>
+      </View>
+
+        <TextInput style = {styles.numTextBox}
+          onChangeText={setPlayerNumber}
+          placeholder="Number"
+        />
+
     </View>
+      
+   
+        
+  
+      
+        
+      
+    
     </View>
     </ScrollView>
     
@@ -95,6 +102,9 @@ export default function CreateTeam({ navigation, route }) {
 }
   
 const styles = StyleSheet.create({
+  horizntal:{
+    flexDirection: 'row'
+  },
   wholeConatiner: {
     height:'100%',
     width: '100%',
@@ -143,8 +153,44 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'flex-start',
     flexDirection: 'column',
-  }
+  },
+  textBox: {
+    backgroundColor: '#f5f5f5',
+    width: '75%',
+    height: 40,
+    marginLeft: '5%'
+    
+    
 
+  
+    
+   
+  },
+  numTextBox: {
+    backgroundColor: '#f5f5f5',
+    width: '10%',
+    height: 40,
+    
+    
+    
+
+  
+    
+   
+  },
+  text: { 
+    fontSize:20,
+    color: 'black'
+    
+  },
+  textCont: { 
+    alignItems: 'center',
+    padding: 4,
+    height: 40,
+    width: '5%'
+    
+  }
+  
 
 
 });
