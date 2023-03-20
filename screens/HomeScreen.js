@@ -50,15 +50,7 @@ export default function HomeScreen({ navigation }) {
 
       />
           <View>
-      <TextInput
-        value={playerName}
-        onChangeText={setPlayerName}
-        placeholder="Enter player name"
-      />
-      <Button
-        title="Create Player"
-        onPress={handleCreatePlayer}
-      />
+     
     </View>
       <StatusBar style="auto" />
     </View>
