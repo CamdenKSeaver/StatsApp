@@ -69,8 +69,8 @@ export default function CreateTeam({ navigation, route }) {
     const player16 = { number: player16Number, name: player16Name };
     const player17 = { number: player17Number, name: player17Name };
     const player18 = { number: player18Number, name: player18Name };
-    setPlayers([...players, player1, player2,player3,player4,player5,player6,player7,player8,player9,player10,player12,player13,player14,player15,player16,player17,player18]);
-    setTeam({ ...team, players: [...team.players, player1, player2,player3,player4,player5,player6,player7,player8,player9,player10,player12,player13,player14,player15,player16,player17,player18] });
+    setPlayers([...players, player1, player2,player3,player4,player5,player6,player7,player8,player9,player10,player11,player12,player13,player14,player15,player16,player17,player18]);
+    setTeam({ ...team, players: [...team.players, player1, player2,player3,player4,player5,player6,player7,player8,player9,player10,player11,player12,player13,player14,player15,player16,player17,player18] });
     setPlayer1Number('');
     setPlayer1Name('');
     setPlayer2Number('');
@@ -90,7 +90,7 @@ export default function CreateTeam({ navigation, route }) {
     <View style={styles.container}>
      
         <Image
-          style= {{width: '90%', height:'30%',marginTop: '8%'}}
+          style= {{width: '80%', height:'25%',marginTop: '8%'}}
           source={require('../App/assets/images/logo.png')} 
           
         />
@@ -476,9 +476,7 @@ export default function CreateTeam({ navigation, route }) {
         value={player18Number}
         onChangeText={(text) => setPlayer18Number(text)}
       />
-<Text>Team:</Text>
-      <Text>{JSON.stringify(team)}</Text>
-    
+
   </View>
  
         
