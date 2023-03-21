@@ -90,18 +90,18 @@ export default function CreateTeam({ navigation, route }) {
     <View style={styles.container}>
      
         <Image
-          style= {{width: '80%', height:'25%',marginTop: '8%'}}
+          style= {{width: '70%', height:'30%',marginTop: '5%'}}
           source={require('../App/assets/images/logo.png')} 
           
         />
   
-      <View style={[styles.lineContainer, {marginTop: '6%'}]}>
+      <View style={[styles.lineContainer, {marginTop: '6%',height: '2%'}]}>
         </View>
-      <View style={[styles.buttonContainer,{marginTop: '5%'}]}>
+      <View style={[styles.buttonContainer,{marginTop: '0%'}]}>
         <MyButton 
           title='Save Team'
           width= {'40%'}
-          height= {'100%'}
+          height= {75}
           onPress={handleAddPlayers}
           onPress={() => navigation.push("Home")}
         />
@@ -109,7 +109,7 @@ export default function CreateTeam({ navigation, route }) {
         <MyButton 
           title='Back'
           width= {'40%'}
-          height= {'100%'}
+          height= {75}
           marginLeft= {'3.33%'}
           onPress={() => {
             navigation.navigate("Home")}}
@@ -124,7 +124,7 @@ export default function CreateTeam({ navigation, route }) {
       
     </View>
     
-    <View style = {styles.playersContainer}>
+    <View style = {[styles.playersContainer, { marginTop: '5%'}]}>
     <TextInput style = {[styles.textBox,{marginLeft: '20%', width: '60%'}]}
       placeholder = 'Team Name'
       value={team.name}
@@ -509,7 +509,7 @@ const styles = StyleSheet.create({
   },
   container: {
   
-    height:366,
+    height:'20%',
     backgroundColor: '#fff',
     alignItems: 'center',
     flexDirection: 'column',
@@ -521,7 +521,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center', 
-    paddingBottom: '135%',
+    height: '50%'
+    
  
   },
 
