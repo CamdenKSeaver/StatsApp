@@ -34,10 +34,13 @@ export default function NewGame({ navigation, route }) {
       </View>
       
       <View style={{paddingHorizontal:15,marginTop:15}}>
+        
         <SelectList 
+  
         data={data} setSelected= {setSelected} 
         placeholder= {"Select Team"}
         />
+        
       </View>
       
         <MyButton 
@@ -75,6 +78,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     
+  },
+  selecCont: {
+    height: '20%',
+    width: '20%'
   },
 
 

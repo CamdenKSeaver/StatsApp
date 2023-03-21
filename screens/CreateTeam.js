@@ -59,7 +59,7 @@ export default function CreateTeam({ navigation, route }) {
     const player6 = { number: player6Number, name: player6Name };
     const player7 = { number: player7Number, name: player7Name };
     const player8 = { number: player8Number, name: player8Name };
-    const player9 = { number: playe9Number, name: player9ame };
+    const player9 = { number: player9Number, name: player9Name };
     const player10 = { number: player10Number, name: player10Name };
     const player11= { number: player11Number, name: player11Name };
     const player12 = { number: player12Number, name: player12Name };
@@ -90,7 +90,7 @@ export default function CreateTeam({ navigation, route }) {
     <View style={styles.container}>
      
         <Image
-          style= {{width: '70%', height:'30%',marginTop: '5%'}}
+          style= {{width: 300, height:50,marginTop: '5%'}}
           source={require('../App/assets/images/logo.png')} 
           
         />
@@ -103,7 +103,7 @@ export default function CreateTeam({ navigation, route }) {
           width= {'40%'}
           height= {75}
           onPress={handleAddPlayers}
-          onPress={() => navigation.push("Home")}
+        
         />
        
         <MyButton 
@@ -124,7 +124,9 @@ export default function CreateTeam({ navigation, route }) {
       
     </View>
     
-    <View style = {[styles.playersContainer, { marginTop: '5%'}]}>
+    <View style = {[styles.playersContainer, { marginTop: '0%'}]}>
+   
+    
     <TextInput style = {[styles.textBox,{marginLeft: '20%', width: '60%'}]}
       placeholder = 'Team Name'
       value={team.name}
