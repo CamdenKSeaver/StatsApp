@@ -9,6 +9,7 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import Player from "./App/components/Player";
 import { useState } from 'react';
+import TakeStats from "./screens/TakeStats"
  
 const Stack = createNativeStackNavigator();
 
@@ -36,6 +37,11 @@ export default function App() {
         <Stack.Screen 
           name="View Game"
           component={ViewGame}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen 
+          name="Take Stats"
+          component={TakeStats}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

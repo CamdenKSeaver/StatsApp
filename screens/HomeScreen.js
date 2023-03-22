@@ -49,6 +49,14 @@ export default function HomeScreen({ navigation }) {
         marginTop = {'10%'}
 
       />
+       <MyButton 
+        title="Test"
+        onPress={() => navigation.navigate("Take Stats")}
+        width ={'60%'}
+        height ={'9%'}
+        marginTop = {'10%'}
+
+      />
           <View>
      
     </View>
