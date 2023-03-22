@@ -5,6 +5,7 @@ import MyButton from '../App/components/MyButton';
 import {useImage} from 'react-image'
 import React, { useState } from 'react';
 import { SelectList } from 'react-native-dropdown-select-list'
+import colors from '../App/config/colors';
 
 export default function NewGame({ navigation, route }) {
   
@@ -17,8 +18,7 @@ export default function NewGame({ navigation, route }) {
         {key:'3', value:'Team 3'},
         {key:'4', value:'Team 4'},
         {key:'5', value:'Team 5'},
-        {key:'6', value:'Team 6'},
-        {key:'7', value:'Team 7'},
+        
     ]
     console.log(data);
   return (
@@ -33,18 +33,20 @@ export default function NewGame({ navigation, route }) {
       <View style={[styles.lineContainer, {marginTop: '6%'}]}>
       </View>
       
-      <View style={{paddingHorizontal:15,marginTop:15}}>
         
         <SelectList 
-  
         data={data} setSelected= {setSelected} 
         placeholder= {"Select Team"}
+        boxStyles={{height: '25%', width: '47%', marginTop: '6%', borderColor: colors.primaryBlue, borderRadius: 20, borderWidth: 3.5}} 
+        dropdownStyles={{borderColor: colors.primaryBlue, borderRadius: 20, borderWidth: 3.5}}
+        dropdownTextStyles={{color: colors.primaryBlue}}
+        inputStyles={{color: colors.primaryBlue}}
+        maxHeight= {100}
+
         />
         
-      </View>
-      
         <MyButton 
-          marginTop=' 6%'
+          marginTop=' -27%'
           title='Create Team'
           width= {'60%'}
           height= {'7%'}
