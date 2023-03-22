@@ -6,6 +6,7 @@ import {useImage} from 'react-image'
 import React, { useState } from 'react';
 import { SelectList } from 'react-native-dropdown-select-list'
 import colors from '../App/config/colors';
+import { bold } from 'picocolors';
 
 export default function NewGame({ navigation, route }) {
   
@@ -13,11 +14,11 @@ export default function NewGame({ navigation, route }) {
     const [selected, setSelected] = React.useState("");
     
     const data = [
-        {key:'1', value:'Team 1'},
-        {key:'2', value:'Team 2'},
-        {key:'3', value:'Team 3'},
-        {key:'4', value:'Team 4'},
-        {key:'5', value:'Team 5'},
+        {key:'1', value:'Fremd'},
+        {key:'2', value:'Palatine'},
+        {key:'3', value:'Rolling Meadows'},
+        {key:'4', value:'Scahumburg'},
+        {key:'5', value:'Conant'},
         
     ]
     console.log(data);
@@ -37,10 +38,10 @@ export default function NewGame({ navigation, route }) {
         <SelectList 
         data={data} setSelected= {setSelected} 
         placeholder= {"Select Team"}
-        boxStyles={{height: '25%', width: '47%', marginTop: '6%', borderColor: colors.primaryBlue, borderRadius: 20, borderWidth: 3.5}} 
+        boxStyles={{height: '25%', width: '49%', marginTop: '6%', borderColor: colors.primaryBlue, borderRadius: 20, borderWidth: 3.5}} 
         dropdownStyles={{borderColor: colors.primaryBlue, borderRadius: 20, borderWidth: 3.5}}
-        dropdownTextStyles={{color: colors.primaryBlue}}
-        inputStyles={{color: colors.primaryBlue}}
+        dropdownTextStyles={{color: colors.primaryBlue, fontSize: 16, fontWeight: 'bold'}}
+        inputStyles={{color: colors.primaryBlue, fontSize: 16, fontWeight: 'bold'}}
         maxHeight= {100}
 
         />
