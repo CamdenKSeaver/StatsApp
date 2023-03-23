@@ -12,7 +12,12 @@ class Player {
 
 class Team {
   constructor(players) {
+    this.teamname = teamname;
     this.players = players;
+  }
+
+  get teamname(){
+    return this.teamname
   }
 }
 

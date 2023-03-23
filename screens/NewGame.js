@@ -7,6 +7,8 @@ import React, { useState } from 'react';
 import { SelectList } from 'react-native-dropdown-select-list'
 import colors from '../App/config/colors';
 import { bold } from 'picocolors';
+import { get } from 'react-native/Libraries/TurboModule/TurboModuleRegistry';
+import { Player } from '../App/components/Player';
 
 export default function NewGame({ navigation, route }) {
   
@@ -37,12 +39,15 @@ export default function NewGame({ navigation, route }) {
         
         <SelectList 
         data={data} setSelected= {setSelected} 
-        placeholder= {"Select Team"}
-        boxStyles={{height: '25%', width: '49%', marginTop: '6%', borderColor: colors.primaryBlue, borderRadius: 20, borderWidth: 3.5}} 
+        placeholder= {"              Select Team               "}
+        boxStyles={{height: '25.5%', width: '53%', marginTop: '6%', borderColor: colors.primaryBlue, borderRadius: 20, borderWidth: 3.5}} 
         dropdownStyles={{borderColor: colors.primaryBlue, borderRadius: 20, borderWidth: 3.5}}
-        dropdownTextStyles={{color: colors.primaryBlue, fontSize: 16, fontWeight: 'bold'}}
-        inputStyles={{color: colors.primaryBlue, fontSize: 16, fontWeight: 'bold'}}
+        dropdownTextStyles={{color: colors.primaryBlue, fontSize: 14, fontWeight: 'bold'}}
+        inputStyles={{color: colors.primaryBlue, fontSize: 14, fontWeight: 'bold'}}
         maxHeight= {100}
+        
+        
+      
 
         />
         
