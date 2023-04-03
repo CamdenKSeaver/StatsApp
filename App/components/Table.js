@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, FlatList } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList,_ } from 'react-native';
 
 const Table = () => {
   const [data, setData] = useState(Array(54).fill(0));
