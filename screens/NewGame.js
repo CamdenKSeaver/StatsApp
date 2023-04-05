@@ -40,7 +40,7 @@ export default function NewGame({ navigation, route }) {
         <SelectList 
         data={data} setSelected= {setSelected} 
         placeholder= {"              Select Team               "}
-        boxStyles={{height: '25.5%', width: '53%', marginTop: '6%', borderColor: colors.primaryBlue, borderRadius: 20, borderWidth: 3.5}} 
+        boxStyles={{height: '25.5%', width: '53%', marginTop: '8%', borderColor: colors.primaryBlue, borderRadius: 20, borderWidth: 3.5}} 
         dropdownStyles={{borderColor: colors.primaryBlue, borderRadius: 20, borderWidth: 3.5}}
         dropdownTextStyles={{color: colors.primaryBlue, fontSize: 14, fontWeight: 'bold'}}
         inputStyles={{color: colors.primaryBlue, fontSize: 14, fontWeight: 'bold'}}
@@ -50,9 +50,18 @@ export default function NewGame({ navigation, route }) {
       
 
         />
-        
         <MyButton 
           marginTop=' -27%'
+          title='Start'
+          width= {'60%'}
+          height= {'7%'}
+          onPress={() => {
+            navigation.navigate("Take Stats")}}
+          
+        />
+        
+        <MyButton 
+           marginTop=' 6%'
           title='Create Team'
           width= {'60%'}
           height= {'7%'}

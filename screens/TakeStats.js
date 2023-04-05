@@ -21,7 +21,7 @@ export default function TakeStats({ navigation, route }) {
       <View style = {styles.saveContainer}>
 
       <Image
-          style= {{width: '33%', height:'65%',marginTop: '1.5%'}}
+          style= {{width: '35%', height:'60%',marginTop: '1.5%'}}
           source={require('../App/assets/images/logo.png')} 
         
 
