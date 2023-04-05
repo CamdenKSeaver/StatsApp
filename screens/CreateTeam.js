@@ -7,6 +7,9 @@ import MyTextInput from '../App/components/MyTextInput';
 import {Player, Team} from '../App/components/Player';
 import React, { useState } from 'react';
 import PlayerName from '../App/components/PlayerName';
+import { RootSiblingParent } from 'react-native-root-siblings';
+import Toast from 'react-native-root-toast';
+
 
 
 export default function CreateTeam({ navigation, route }) {
@@ -51,6 +54,9 @@ export default function CreateTeam({ navigation, route }) {
   const [player18Number, setPlayer18Number] = useState('');
 
   const handleAddPlayers = () => {
+    let toast = Toast.show('Team Successfully Saved.', {
+      duration: Toast.durations.SHORT, position: 125,
+    });
     const player1 = { number: player1Number, name: player1Name };
     const player2 = { number: player2Number, name: player2Name };
     const player3 = { number: player3Number, name: player3Name };
@@ -98,6 +104,7 @@ export default function CreateTeam({ navigation, route }) {
       <View style={[styles.lineContainer, {marginTop: '6%',height: '2%'}]}>
         </View>
       <View style={[styles.buttonContainer,{marginTop: '0%'}]}>
+
         <MyButton 
           title='Save Team'
           width= {'40%'}
@@ -105,15 +112,16 @@ export default function CreateTeam({ navigation, route }) {
           onPress={handleAddPlayers}
         
         />
-       
-        <MyButton 
-          title='Back'
-          width= {'40%'}
-          height= {75}
-          marginLeft= {'3.33%'}
-          onPress={() => {
-            navigation.navigate("Home")}}
-        />
+        <RootSiblingParent>
+          <MyButton 
+            title='Back'
+            width= {'40%'}
+            height= {75}
+            marginLeft= {'3.33%'}
+            onPress={() => {
+              navigation.navigate("Home")}}
+           />
+         </RootSiblingParent>
         
       </View>
       
