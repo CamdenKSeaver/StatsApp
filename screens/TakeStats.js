@@ -20,33 +20,8 @@ export default function TakeStats({ navigation, route }) {
     <ScrollView>
       <View style = {styles.saveContainer}>
 
-      <Image
-          style= {{width: '35%', height:'60%',marginTop: '1.5%'}}
-          source={require('../App/assets/images/logo.png')} 
-        
-
-        />
-         <MyButton 
-          title='Save Game'
-          width= {'20%'}
-          height= {'65%'}
-          marginLeft ={'5%'}
-          marginTop ={'3%'}
-         
-          
-        
-        />
-       
-        <MyButton 
-          title='Back'
-          width= {'20%'}
-          height= {'65%'}
-          marginTop ={'3%'}
-          marginLeft ={'5%'}
-          
-          onPress={() => {
-            navigation.navigate("Home")}}
-        />
+      
+     
 
       </View>
 
@@ -92,7 +67,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     backgroundColor: '#fff',
-    height:600
+    height: '100%'
     
   
   
@@ -100,7 +75,7 @@ const styles = StyleSheet.create({
   },
 
   saveContainer:{
-    height: '12%',
+    height: '1%',
     width: '100%',
      flexDirection: 'row',
      alignItems: 'center',
@@ -108,7 +83,7 @@ const styles = StyleSheet.create({
 
   },
   playerCont: {
-    height: '70.5%',
+    height: '75%',
     marginLeft: '2%',
     marginRight: '10%',
   
