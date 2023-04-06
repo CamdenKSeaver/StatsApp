@@ -42,6 +42,8 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'lightblue',
+    borderWidth: 1,
+
   },
   cellText: {
     fontSize: 20,

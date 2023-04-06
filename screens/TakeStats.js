@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
     height: '60%',
     marginLeft: '2%',
     marginRight: '10%',
+    
   
     flexDirection: 'column',
    
