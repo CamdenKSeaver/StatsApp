@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     backgroundColor: '#fff',
-    height: '100%'
+    height: 500
     
   
   
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
 
   },
   playerCont: {
-    height: '75%',
+    height: '60%',
     marginLeft: '2%',
     marginRight: '10%',
   
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   },
   column: {
     flexDirection: 'row',
-    height: '15%',
+    height: '10%',
     alignItems: 'center',
    
     

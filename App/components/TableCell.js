@@ -12,10 +12,11 @@ const TableCell = ({ onPress, value }) => {
 const styles = StyleSheet.create({
   cell: {
     borderWidth: 1,
-    borderColor: '#000',
+    borderColor: '#000000',
     padding: 10,
     alignItems: 'center',
     justifyContent: 'center',
+    
   },
 });
 

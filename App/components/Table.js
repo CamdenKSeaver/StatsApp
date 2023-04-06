@@ -38,7 +38,7 @@ const styles = {
   cell: {
     
     width: '10%',
-    height: '5%',
+    height: 50,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'lightblue',
