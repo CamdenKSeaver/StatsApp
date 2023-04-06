@@ -40,13 +40,20 @@ export default function TakeStats({ navigation, route }) {
       </View>
     <View style = { styles.container}>
 
-      <View style = {styles.playerCont}>
+      <View style = {[styles.playerCont, {marginTop: '.3%'}]}>
+      <View style ={[styles.line, { marginTop:'-8%'}]}/>
     <Text>Player 1</Text>
+    <View style ={[styles.line, { marginTop:'0%'}]}/>
     <Text>Player 2</Text>
+    <View style ={styles.line}/>
     <Text>Player 3</Text>
-    <Text>Player 4</Text>
-    <Text>Player 5</Text>
-    <Text>Player 6</Text>
+    <View style ={styles.line}/>
+    <Text style = {styles.blank}>Player 4</Text>
+    <View style ={[styles.line, { marginTop:'-1%'}]}/>
+    <Text style = {styles.blank}>Player 5</Text>
+    <View style ={[styles.line, { marginTop:'0%'}]}/>
+    <Text >Player 6</Text>
+    <View style ={[styles.line, { marginTop:'0%'}]}/>
    
     </View>
     
@@ -83,9 +90,10 @@ const styles = StyleSheet.create({
 
   },
   playerCont: {
-    height: '60%',
+    height: '61%',
     marginLeft: '2%',
-    marginRight: '10%',
+    width: '16.9%',
+    
     
   
     flexDirection: 'column',
@@ -109,8 +117,15 @@ const styles = StyleSheet.create({
    
     
   },
-  height: {
+  line: {
+    backgroundColor: '#000000',
+    height: 2,
+    marginTop: '1%'
     
+    
+  },
+  blank: {
+      padding:.5,
   }
  
 
