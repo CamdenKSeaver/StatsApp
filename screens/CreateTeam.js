@@ -81,6 +81,39 @@ export default function CreateTeam({ navigation, route }) {
     setPlayer1Name('');
     setPlayer2Number('');
     setPlayer2Name('');
+    setPlayer3Number('');
+    setPlayer3Name('');
+    setPlayer4Number('');
+    setPlayer4Name('');
+    setPlayer5Number('');
+    setPlayer5Name('');
+    setPlayer6Number('');
+    setPlayer6Name('');
+    setPlayer7Number('');
+    setPlayer7Name('');
+    setPlayer8Number('');
+    setPlayer8Name('');
+    setPlayer9Number('');
+    setPlayer9Name('');
+    setPlayer10Number('');
+    setPlayer10Name('');
+    setPlayer11Number('');
+    setPlayer11Name('');
+    setPlayer12Number('');
+    setPlayer12Name('');
+    setPlayer13Number('');
+    setPlayer13Name('');
+    setPlayer14Number('');
+    setPlayer14Name('');
+    setPlayer15Number('');
+    setPlayer15Name('');
+    setPlayer16Number('');
+    setPlayer16Name('');
+    setPlayer17Number('');
+    setPlayer17Name('');
+    setPlayer18Number('');
+    setPlayer18Name('');
+    setTeam('');
 
 
   };
@@ -166,7 +199,7 @@ export default function CreateTeam({ navigation, route }) {
       
       <TextInput style = {styles.textBox}
         placeholder='Athlete Name'
-          ovalue={player2Name}
+          value={player2Name}
           onChangeText={(text) => setPlayer2Name(text)}
       />
     

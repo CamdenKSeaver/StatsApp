@@ -36,11 +36,11 @@ export default function NewGame({ navigation, route }) {
       <View style={[styles.lineContainer, {marginTop: '6%'}]}>
       </View>
       
-        
+      <View style ={styles.width}>
         <SelectList 
         data={data} setSelected= {setSelected} 
         placeholder= {"              Select Team               "}
-        boxStyles={{height: '25.5%', width: '53%', marginTop: '8%', borderColor: colors.primaryBlue, borderRadius: 20, borderWidth: 3.5}} 
+        boxStyles={{height: '36%', width: '100%',  borderColor: colors.primaryBlue, borderRadius: 20, borderWidth: 3.5}} 
         dropdownStyles={{borderColor: colors.primaryBlue, borderRadius: 20, borderWidth: 3.5}}
         dropdownTextStyles={{color: colors.primaryBlue, fontSize: 14, fontWeight: 'bold'}}
         inputStyles={{color: colors.primaryBlue, fontSize: 14, fontWeight: 'bold'}}
@@ -50,21 +50,22 @@ export default function NewGame({ navigation, route }) {
       
 
         />
+     
         <MyButton 
-          marginTop=' -27%'
+       marginTop={'-30%'}
           title='Start'
-          width= {'60%'}
-          height= {'7%'}
+          width= {'100%'}
+          height= {'13%'}
           onPress={() => {
             navigation.navigate("Take Stats")}}
           
         />
         
         <MyButton 
-           marginTop=' 6%'
+          
           title='Create Team'
-          width= {'60%'}
-          height= {'7%'}
+          width= {'100%'}
+          height= {'13%'}
           onPress={() => {
             navigation.navigate("Create Team")}}
           
@@ -73,13 +74,13 @@ export default function NewGame({ navigation, route }) {
        
         <MyButton 
           title='Back'
-          width= {'60%'}
-          height= {'7%'}
-          marginTop=' 6%'
+          width= {'100%'}
+          height= {'13%'}
+          
           onPress={() => {
             navigation.navigate("Home")}}
         />
-      
+      </View>
       <View style={styles.teamContainer}>
         
       </View>
@@ -121,5 +122,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  width: {
+    width : '60%',
+    height: '50%',
+   justifyContent: 'space-evenly'
+  }
 
 });

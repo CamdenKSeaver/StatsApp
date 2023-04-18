@@ -2,19 +2,18 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Button, View, Image, TextInput } from 'react-native';
 import MyButton from '../App/components/MyButton';
 import {useImage} from 'react-image'
-import React, { useState } from 'react';
+import React, { useState,  useEffect } from 'react';
 import Player from '../App/components/Player';
+import * as ScreenOrientation from 'expo-screen-orientation';
 
 
 export default function HomeScreen({ navigation }) {
-  const [playerName, setPlayerName] = useState('');
-  const [players, setPlayers] = useState([]);
-
-  const handleCreatePlayer = () => {
-    const newPlayer = new Player(playerName, 0);
-    setPlayers([...players, newPlayer]);
-    setPlayerName('');
-  }
+  useEffect(() => {
+    ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
+    return () => {
+      ScreenOrientation.unlockAsync();
+    };
+  }, []);
   return (
     <View style={styles.container}>
     
