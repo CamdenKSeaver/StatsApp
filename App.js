@@ -10,7 +10,9 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import Player from "./App/components/Player";
 import { useState } from 'react';
 import TakeStats from "./screens/TakeStats"
- 
+
+
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {

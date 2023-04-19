@@ -9,6 +9,7 @@ import React, { useState } from 'react';
 import PlayerName from '../App/components/PlayerName';
 import { RootSiblingParent } from 'react-native-root-siblings';
 import Toast from 'react-native-root-toast';
+import { collection, addDoc } from 'firebase/firestore';
 
 
 
@@ -53,70 +54,65 @@ export default function CreateTeam({ navigation, route }) {
   const [player18Name, setPlayer18Name] = useState('');
   const [player18Number, setPlayer18Number] = useState('');
 
-  const handleAddPlayers = () => {
-    let toast = Toast.show('Team Successfully Saved.', {
-      duration: Toast.durations.SHORT, position: 125,
-    });
-    const player1 = { number: player1Number, name: player1Name };
-    const player2 = { number: player2Number, name: player2Name };
-    const player3 = { number: player3Number, name: player3Name };
-    const player4 = { number: player4Number, name: player4Name };
-    const player5 = { number: player5Number, name: player5Name };
-    const player6 = { number: player6Number, name: player6Name };
-    const player7 = { number: player7Number, name: player7Name };
-    const player8 = { number: player8Number, name: player8Name };
-    const player9 = { number: player9Number, name: player9Name };
-    const player10 = { number: player10Number, name: player10Name };
-    const player11= { number: player11Number, name: player11Name };
-    const player12 = { number: player12Number, name: player12Name };
-    const player13 = { number: player13Number, name: player13Name };
-    const player14= { number: player14Number, name: player14Name };
-    const player15= { number: player15Number, name: player15Name };
-    const player16 = { number: player16Number, name: player16Name };
-    const player17 = { number: player17Number, name: player17Name };
-    const player18 = { number: player18Number, name: player18Name };
-    setPlayers([...players, player1, player2,player3,player4,player5,player6,player7,player8,player9,player10,player11,player12,player13,player14,player15,player16,player17,player18]);
-    setTeam({ ...team, players: [...team.players, player1, player2,player3,player4,player5,player6,player7,player8,player9,player10,player11,player12,player13,player14,player15,player16,player17,player18] });
-    setPlayer1Number('');
-    setPlayer1Name('');
-    setPlayer2Number('');
-    setPlayer2Name('');
-    setPlayer3Number('');
-    setPlayer3Name('');
-    setPlayer4Number('');
-    setPlayer4Name('');
-    setPlayer5Number('');
-    setPlayer5Name('');
-    setPlayer6Number('');
-    setPlayer6Name('');
-    setPlayer7Number('');
-    setPlayer7Name('');
-    setPlayer8Number('');
-    setPlayer8Name('');
-    setPlayer9Number('');
-    setPlayer9Name('');
-    setPlayer10Number('');
-    setPlayer10Name('');
-    setPlayer11Number('');
-    setPlayer11Name('');
-    setPlayer12Number('');
-    setPlayer12Name('');
-    setPlayer13Number('');
-    setPlayer13Name('');
-    setPlayer14Number('');
-    setPlayer14Name('');
-    setPlayer15Number('');
-    setPlayer15Name('');
-    setPlayer16Number('');
-    setPlayer16Name('');
-    setPlayer17Number('');
-    setPlayer17Name('');
-    setPlayer18Number('');
-    setPlayer18Name('');
-    setTeam('');
+  
 
 
-  };
+const handleAddPlayers = async () => {
+  // create an array of player objects
+  const playerList = [    { number: player1Number, name: player1Name },    { number: player2Number, name: player2Name },    { number: player3Number, name: player3Name },    { number: player4Number, name: player4Name },    { number: player5Number, name: player5Name },    { number: player6Number, name: player6Name },    { number: player7Number, name: player7Name },    { number: player8Number, name: player8Name },    { number: player9Number, name: player9Name },    { number: player10Number, name: player10Name },    { number: player11Number, name: player11Name },    { number: player12Number, name: player12Name },    { number: player13Number, name: player13Name },    { number: player14Number, name: player14Name },    { number: player15Number, name: player15Name },    { number: player16Number, name: player16Name },    { number: player17Number, name: player17Name },    { number: player18Number, name: player18Name },  ];
+
+  // create a new document in the "teams" collection with the team name and player list
+  const docRef = await addDoc(addCollection('teams'), {
+    name: team.name,
+    players: playerList,
+  });
+
+  // show a success message
+  let toast = Toast.show('Team Successfully Saved.', {
+    duration: Toast.durations.SHORT, position: 125,
+  });
+
+  // reset the form fields
+  setPlayers([]);
+  setTeam({ name: '', players: [] });
+  setPlayer1Number('');
+  setPlayer1Name('');
+  setPlayer2Number('');
+  setPlayer2Name('');
+  setPlayer3Number('');
+  setPlayer3Name('');
+  setPlayer4Number('');
+  setPlayer4Name('');
+  setPlayer5Number('');
+  setPlayer5Name('');
+  setPlayer6Number('');
+  setPlayer6Name('');
+  setPlayer7Number('');
+  setPlayer7Name('');
+  setPlayer8Number('');
+  setPlayer8Name('');
+  setPlayer9Number('');
+  setPlayer9Name('');
+  setPlayer10Number('');
+  setPlayer10Name('');
+  setPlayer11Number('');
+  setPlayer11Name('');
+  setPlayer12Number('');
+  setPlayer12Name('');
+  setPlayer13Number('');
+  setPlayer13Name('');
+  setPlayer14Number('');
+  setPlayer14Name('');
+  setPlayer15Number('');
+  setPlayer15Name('');
+  setPlayer16Number('');
+  setPlayer16Name('');
+  setPlayer17Number('');
+  setPlayer17Name('');
+  setPlayer18Number('');
+  setPlayer18Name('');
+};
+
   
   return (
 
