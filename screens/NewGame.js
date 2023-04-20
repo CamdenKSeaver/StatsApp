@@ -8,7 +8,9 @@ import { SelectList } from 'react-native-dropdown-select-list'
 import colors from '../App/config/colors';
 import { bold } from 'picocolors';
 import { get } from 'react-native/Libraries/TurboModule/TurboModuleRegistry';
-import { Player } from '../App/components/Player';
+import { Player, Team } from '../App/components/Player';
+import TeamsList from '../App/components/TeamList';
+
 
 export default function NewGame({ navigation, route }) {
   
@@ -83,6 +85,9 @@ export default function NewGame({ navigation, route }) {
       </View>
       <View style={styles.teamContainer}>
         
+      </View>
+      <View>
+        <TeamsList></TeamsList>
       </View>
      
       <StatusBar style="auto" />
