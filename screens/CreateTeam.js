@@ -63,21 +63,21 @@ export default function CreateTeam({ navigation, route }) {
 
 
 const handleAddPlayers = async () => {
-  // create an array of player objects
+ 
   const playerList = [    { number: player1Number, name: player1Name },    { number: player2Number, name: player2Name },    { number: player3Number, name: player3Name },    { number: player4Number, name: player4Name },    { number: player5Number, name: player5Name },    { number: player6Number, name: player6Name },    { number: player7Number, name: player7Name },    { number: player8Number, name: player8Name },    { number: player9Number, name: player9Name },    { number: player10Number, name: player10Name },    { number: player11Number, name: player11Name },    { number: player12Number, name: player12Name },    { number: player13Number, name: player13Name },    { number: player14Number, name: player14Name },    { number: player15Number, name: player15Name },    { number: player16Number, name: player16Name },    { number: player17Number, name: player17Name },    { number: player18Number, name: player18Name },  ];
 
-  // create a new document in the "teams" collection with the team name and player list
+ 
   const docRef = await addDoc(collection(db,'teams'), {
     name: team.name,
     players: playerList,
   });
 
-  // show a success message
+
   let toast = Toast.show('Team Successfully Saved.', {
     duration: Toast.durations.SHORT, position: 125,
   });
 
-  // reset the form fields
+  
   setPlayers([]);
   setTeam({ name: '', players: [] });
   setPlayer1Number('');

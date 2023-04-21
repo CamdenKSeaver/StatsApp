@@ -37,56 +37,38 @@ export default function NewGame({ navigation, route }) {
   
       <View style={[styles.lineContainer, {marginTop: '6%'}]}>
       </View>
-      
-      <View style ={styles.width}>
-        <SelectList 
-        data={data} setSelected= {setSelected} 
-        placeholder= {"              Select Team               "}
-        boxStyles={{height: '36%', width: '100%',  borderColor: colors.primaryBlue, borderRadius: 20, borderWidth: 3.5}} 
-        dropdownStyles={{borderColor: colors.primaryBlue, borderRadius: 20, borderWidth: 3.5}}
-        dropdownTextStyles={{color: colors.primaryBlue, fontSize: 14, fontWeight: 'bold'}}
-        inputStyles={{color: colors.primaryBlue, fontSize: 14, fontWeight: 'bold'}}
-        maxHeight= {100}
-        
-        
-      
+      <View style={[styles.buttonContainer,{marginTop: '0%'}]}>
+        <View style = {styles.row}>
 
-        />
-     
-        <MyButton 
-       marginTop={'-30%'}
-          title='Start'
-          width= {'100%'}
-          height= {'13%'}
-          onPress={() => {
-            navigation.navigate("Take Stats")}}
-          
-        />
         
         <MyButton 
-          
           title='Create Team'
-          width= {'100%'}
-          height= {'13%'}
+          width= {'40%'}
+          height= {75}
           onPress={() => {
             navigation.navigate("Create Team")}}
-          
-        />
-     
-       
-        <MyButton 
-          title='Back'
-          width= {'100%'}
-          height= {'13%'}
-          
-          onPress={() => {
-            navigation.navigate("Home")}}
-        />
-      </View>
-      <View style={styles.teamContainer}>
+         />
         
+        
+        
+   
+          <MyButton 
+            title='Back'
+            width= {'40%'}
+            height= {75}
+            marginLeft= {'3.33%'}
+            onPress={() => {
+              navigation.navigate("Home")}}
+           />
+        
+        
+        </View>
       </View>
-      <View>
+      
+      
+      
+        
+       <View style = {styles.flatlist}>
         <TeamsList></TeamsList>
       </View>
      
@@ -105,6 +87,24 @@ const styles = StyleSheet.create({
   selecCont: {
     height: '20%',
     width: '20%'
+  },
+  buttonContainer: {
+  
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'flex-start', 
+    height: '15%'
+    
+ 
+  },
+  row:{
+    flexDirection: 'row'
+  },
+  flatlist:{
+    width: '100%',
+    height: '80%',
+    
   },
 
 

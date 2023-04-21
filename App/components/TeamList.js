@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { collection, onSnapshot, query } from 'firebase/firestore';
 import { db } from '../config/firebase';
+import colors from '../config/colors';
 
 const TeamsList = () => {
   const [teams, setTeams] = useState([]);
@@ -32,6 +33,7 @@ const TeamsList = () => {
 
   return (
     <FlatList
+    
       data={teams}
       renderItem={renderTeamItem}
       keyExtractor={(item) => item.id}
@@ -43,17 +45,23 @@ const TeamsList = () => {
 const styles = {
   teamsList: {
     flex: 1,
+    
+  
+    
   },
   teamItem: {
+    
     flexDirection: 'row',
     alignItems: 'center',
     padding: 16,
     borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    borderBottomColor: '#00000',
   },
   teamName: {
+    
     fontSize: 18,
     fontWeight: 'bold',
+    color: colors.primaryBlue
   },
 };
 
