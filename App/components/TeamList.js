@@ -33,7 +33,7 @@ const TeamsList = () => {
 
   return (
     <FlatList
-    
+   
       data={teams}
       renderItem={renderTeamItem}
       keyExtractor={(item) => item.id}

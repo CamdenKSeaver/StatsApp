@@ -63,6 +63,7 @@ export default function NewGame({ navigation, route }) {
         
         
         </View>
+        <Text style = {styles.text}>Select Team</Text>
       </View>
       
       
@@ -87,6 +88,12 @@ const styles = StyleSheet.create({
   selecCont: {
     height: '20%',
     width: '20%'
+  },
+  text: {
+    marginTop: 10,
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: colors.primaryBlue
   },
   buttonContainer: {
   
