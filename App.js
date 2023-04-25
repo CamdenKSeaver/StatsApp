@@ -2,6 +2,7 @@ import HomeScreen from "./screens/HomeScreen";
 import CreateTeam from "./screens/CreateTeam";
 import NewGame from "./screens/NewGame";
 import ViewGame from "./screens/ViewGame";
+import SelectPlayers from "./screens/SelectPlayers"
 import { NavigationContainer } from "@react-navigation/native";
 import 'react-native-gesture-handler';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -26,6 +27,7 @@ export default function App() {
           component={HomeScreen}
           options={{headerShown: false}}
         />
+     
         <Stack.Screen 
           name="Create Team"
           component={CreateTeam}
@@ -44,6 +46,11 @@ export default function App() {
         <Stack.Screen 
           name="Take Stats"
           component={TakeStats}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen 
+          name="Select Players"
+          component={SelectPlayers}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

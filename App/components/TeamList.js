@@ -3,6 +3,8 @@ import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { collection, onSnapshot, query } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import colors from '../config/colors';
+import { useNavigation } from '@react-navigation/native';
+
 
 const TeamsList = () => {
   const [teams, setTeams] = useState([]);
@@ -16,6 +18,8 @@ const TeamsList = () => {
     return unsubscribe;
   }, []);
 
+  const navigation = useNavigation();
+
   const renderTeamItem = ({ item }) => {
     return (
       <TouchableOpacity onPress={() => handleTeamPress(item)}>
@@ -27,13 +31,12 @@ const TeamsList = () => {
   };
 
   const handleTeamPress = (team) => {
-    
     console.log('Team Pressed:', team.name);
+    navigation.navigate('Select Players', { teamId: team.id });
   };
 
   return (
     <FlatList
-   
       data={teams}
       renderItem={renderTeamItem}
       keyExtractor={(item) => item.id}
