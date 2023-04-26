@@ -13,6 +13,8 @@ import { AntDesign } from '@expo/vector-icons';
 export default function TakeStats({ navigation, route }) {
   const [opponentTeamName, setOpponentTeamName] = useState('');
 
+  const { teamName, players } = route.params;
+
   useEffect(() => {
     ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
     return () => {
@@ -22,10 +24,8 @@ export default function TakeStats({ navigation, route }) {
 
   return (
     <ScrollView>
-      
-
       <View style={styles.column}>
-        <Text style={styles.top1}>Team Name</Text>
+        <Text style={styles.top1}>{teamName}</Text>
         <Text style={styles.top2}>Atk</Text>
         <Text style={styles.top2}>Kill</Text>
         <Text style={styles.top2}>Err</Text>
@@ -40,17 +40,17 @@ export default function TakeStats({ navigation, route }) {
       <View style={styles.container}>
         <View style={[styles.playerCont, { marginTop: '.3%' }]}>
           <View style={[styles.line, { marginTop: '-8%' }]} />
-          <Text>Player 1</Text>
+          <Text>{players[0].name}</Text>
           <View style={[styles.line, { marginTop: '0%' }]} />
-          <Text>Player 2</Text>
+          <Text>{players[1].name}</Text>
           <View style={styles.line} />
-          <Text>Player 3</Text>
+          <Text>{players[2].name}</Text>
           <View style={styles.line} />
-          <Text style={styles.blank}>Player 4</Text>
+          <Text style={styles.blank}>{players[3].name}</Text>
           <View style={[styles.line, { marginTop: '-1%' }]} />
-          <Text style={styles.blank}>Player 5</Text>
+          <Text style={styles.blank}>{players[4].name}</Text>
           <View style={[styles.line, { marginTop: '0%' }]} />
-          <Text>Player 6</Text>
+          <Text>{players[5].name}</Text>
           <View style={[styles.line, { marginTop: '0%' }]} />
         </View>
         <Table />
@@ -58,19 +58,21 @@ export default function TakeStats({ navigation, route }) {
 
       <View style={styles.height} />
       <View style={[styles.saveContainer, { marginTop: -190, paddingBottom: 60 }]}>
-  <TouchableOpacity style={styles.backIcon} onPress={() => navigation.goBack()}>
-    <AntDesign name="arrowleft" size={24} color="black" />
-  </TouchableOpacity>
-  <View style={styles.inputContainer}>
-    <TextInput
-      style={styles.input}
-      placeholder="Opponent Team Name"
-      value={opponentTeamName}
-      onChangeText={setOpponentTeamName}
-    />
-  </View>
-  <TouchableOpacity style={styles.saveIcon}>
-    <AntDesign name="save" size={24} color="black" />
+        <TouchableOpacity style={styles.backIcon} onPress={() => navigation.goBack()}>
+          <AntDesign name="arrowleft" size={24} color="black" />
+        </TouchableOpacity>
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.input}
+            placeholder="Opponent Team Name"
+            value={opponentTeamName}
+            onChangeText={setOpponentTeamName}
+          />
+        </View>
+        <TouchableOpacity style={styles.saveIcon}>
+          <AntDesign name="save" size={24} color="black" />
+       
+
   </TouchableOpacity>
 </View>
     </ScrollView>

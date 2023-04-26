@@ -5,7 +5,6 @@ import { db } from '../config/firebase';
 import colors from '../config/colors';
 import { useNavigation } from '@react-navigation/native';
 
-
 const TeamsList = () => {
   const [teams, setTeams] = useState([]);
 
@@ -31,9 +30,14 @@ const TeamsList = () => {
   };
 
   const handleTeamPress = (team) => {
-    console.log('Team Pressed:', team.name);
-    navigation.navigate('Select Players', { teamId: team.id });
+    console.log('Team selected ', team.name);
+    navigation.navigate('Take Stats', { 
+      teamId: team.id, 
+      teamName: team.name, 
+      players: team.players 
+    });
   };
+  
 
   return (
     <FlatList
@@ -48,12 +52,8 @@ const TeamsList = () => {
 const styles = {
   teamsList: {
     flex: 1,
-    
-  
-    
   },
   teamItem: {
-    
     flexDirection: 'row',
     alignItems: 'center',
     padding: 16,
@@ -61,7 +61,6 @@ const styles = {
     borderBottomColor: '#00000',
   },
   teamName: {
-    
     fontSize: 18,
     fontWeight: 'bold',
     color: colors.primaryBlue
