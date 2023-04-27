@@ -8,13 +8,14 @@ import {useImage} from 'react-image'
 import { SafeAreaView } from 'react-native';
 import Table from '../App/components/Table';
 import { AntDesign } from '@expo/vector-icons';
+import StatBox from '../App/components/StatBox';
 
 
 export default function TakeStats({ navigation, route }) {
   const [opponentTeamName, setOpponentTeamName] = useState('');
 
   const { teamName, players } = route.params;
-
+  
   useEffect(() => {
     ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
     return () => {
@@ -39,21 +40,42 @@ export default function TakeStats({ navigation, route }) {
 
       <View style={styles.container}>
         <View style={[styles.playerCont, { marginTop: '.3%' }]}>
-          <View style={[styles.line, { marginTop: '-8%' }]} />
+          <View style ={styles.statRow}>
           <Text>{players[0].name}</Text>
-          <View style={[styles.line, { marginTop: '0%' }]} />
+            <StatBox
+                width ={100}
+                height ={50}
+            />
+
+          </View>
+
+
+          <View style ={styles.statRow}>
           <Text>{players[1].name}</Text>
-          <View style={styles.line} />
+          </View>
+
+
+          <View style ={styles.statRow}>
           <Text>{players[2].name}</Text>
-          <View style={styles.line} />
+          </View>
+
+
+          <View style ={styles.statRow}>
           <Text style={styles.blank}>{players[3].name}</Text>
-          <View style={[styles.line, { marginTop: '-1%' }]} />
+          </View>
+
+
+          <View style ={styles.statRow}>
           <Text style={styles.blank}>{players[4].name}</Text>
-          <View style={[styles.line, { marginTop: '0%' }]} />
+          </View>
+
+
+          <View style ={styles.statRow}>
           <Text>{players[5].name}</Text>
-          <View style={[styles.line, { marginTop: '0%' }]} />
+          </View>
+  
         </View>
-        <Table />
+     
       </View>
 
       <View style={styles.height} />
@@ -133,6 +155,12 @@ const styles = StyleSheet.create({
 
    
     
+  },
+
+  statRow: {
+    flexDirection: 'column',
+    height: 20,
+
   },
   top1: {
     marginLeft: '2%',
