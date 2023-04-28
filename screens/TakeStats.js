@@ -22,7 +22,7 @@ export default function TakeStats({ navigation, route }) {
       ScreenOrientation.unlockAsync();
     };
   }, []);
-
+var width = 64.5;
   return (
     <ScrollView>
       <View style={styles.column}>
@@ -41,9 +41,59 @@ export default function TakeStats({ navigation, route }) {
       <View style={styles.container}>
         <View style={[styles.playerCont, { marginTop: '.3%' }]}>
           <View style ={styles.statRow}>
-          <Text>{players[0].name}</Text>
+          <Text style = { styles.nameSize}>{players[0].name}</Text>
             <StatBox
-                width ={100}
+            id={0}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={1}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={2}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={3}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={4}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={5}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={6}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={7}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={8}
+            marginLeft={0}
+                width ={width}
                 height ={50}
             />
 
@@ -51,27 +101,297 @@ export default function TakeStats({ navigation, route }) {
 
 
           <View style ={styles.statRow}>
-          <Text>{players[1].name}</Text>
+          <Text style = {styles.nameSize}>{players[1].name}</Text>
+          <StatBox
+            id={9}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={10}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={11}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={12}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={13}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={14}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={15}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={16}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={17}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
           </View>
 
 
           <View style ={styles.statRow}>
-          <Text>{players[2].name}</Text>
+          <Text style ={styles.nameSize}>{players[2].name}</Text>
+          <StatBox
+            id={18}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={19}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={20}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={21}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={22}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={23}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={24}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={25}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={26}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
           </View>
 
 
           <View style ={styles.statRow}>
-          <Text style={styles.blank}>{players[3].name}</Text>
+          <Text style={styles.nameSize}>{players[3].name}</Text>
+          <StatBox
+            id={27}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={28}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={29}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={30}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={31}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={32}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={33}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={34}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={35}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
           </View>
 
 
           <View style ={styles.statRow}>
-          <Text style={styles.blank}>{players[4].name}</Text>
+          <Text style={styles.nameSize}>{players[4].name}</Text>
+          <StatBox
+            id={36}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={37}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={38}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={39}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={40}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={41}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={42}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={43}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={44}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
           </View>
 
 
           <View style ={styles.statRow}>
-          <Text>{players[5].name}</Text>
+          <Text style ={styles.nameSize}>{players[5].name}</Text>
+          <StatBox
+            id={45}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={46}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={47}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={48}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={49}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={50}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={51}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={52}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
+            <StatBox
+            id={53}
+            marginLeft={0}
+                width ={width}
+                height ={50}
+            />
           </View>
   
         </View>
@@ -105,7 +425,11 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     backgroundColor: '#fff',
-    height: 500
+    height: 500,
+    
+  },
+  nameSize:{
+      width: 123,
   },
   saveContainer: {
     flexDirection: 'row',
@@ -158,8 +482,10 @@ const styles = StyleSheet.create({
   },
 
   statRow: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     height: 20,
+    alignItems:'center',
+    width:'100%'
 
   },
   top1: {

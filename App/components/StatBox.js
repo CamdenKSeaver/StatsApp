@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-function StatBox({ title, onPress, onLongPress, width, height, marginTop, marginLeft }) {
+function StatBox({ title, onPress, onLongPress, width, height, marginTop, marginLeft, id }) {
   const [count, setCount] = useState(0);
 
   const handlePress = () => {
@@ -19,17 +19,19 @@ function StatBox({ title, onPress, onLongPress, width, height, marginTop, margin
   };
 
   return (
+    
     <TouchableOpacity
+    id={id}
       style={[styles.cell, { width, height, marginTop, marginLeft }]}
       onPress={handlePress}
       onLongPress={handleLongPress}
       delayLongPress={500}
-    >
+      >
       <View style={styles.countContainer}>
-        <Text style={styles.countText}>{count}</Text>
+        <Text style={[styles.countText, {marginTop: 0}]}>{count}</Text>
       </View>
-      <Text style={styles.titleText}>{title}</Text>
-    </TouchableOpacity>
+    
+      </TouchableOpacity>
   );
 }
 
