@@ -7,6 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 
 const TeamsList = () => {
   const [teams, setTeams] = useState([]);
+  
 
   useEffect(() => {
     const teamsQuery = query(collection(db, 'teams'));

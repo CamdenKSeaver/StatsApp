@@ -4,11 +4,14 @@ import { collection, onSnapshot, query, where } from 'firebase/firestore';
 import { db } from '../App/config/firebase';
 import colors from '../App/config/colors';
 import { useNavigation } from '@react-navigation/native';
-import { RadioButton } from 'react-native-paper';
+import { Checkbox } from 'react-native-paper'; 
+
+
+
 
 const SelectPlayers = ({ route }) => {
   const [players, setPlayers] = useState([]);
-  const [selectedPlayerId, setSelectedPlayerId] = useState(null);
+  const [selectedPlayerIds, setSelectedPlayerIds] = useState([]); // Store an array of selected player IDs
 
   const { teamId } = route.params;
 
@@ -24,16 +27,22 @@ const SelectPlayers = ({ route }) => {
   const navigation = useNavigation();
 
   const handlePlayerPress = (player) => {
-    setSelectedPlayerId(player.id);
+    const isSelected = selectedPlayerIds.includes(player.id);
+
+    if (isSelected) {
+      setSelectedPlayerIds(selectedPlayerIds.filter((id) => id !== player.id));
+    } else {
+      setSelectedPlayerIds([...selectedPlayerIds, player.id]);
+    }
   };
 
   const handleConfirmPress = () => {
-    if (selectedPlayerId) {
-      const selectedPlayer = players.find((player) => player.id === selectedPlayerId);
-      console.log('Selected Player:', selectedPlayer.name);
-      navigation.navigate('Confirm Selection', { selectedPlayer });
+    if (selectedPlayerIds.length > 0) {
+      const selectedPlayers = players.filter((player) => selectedPlayerIds.includes(player.id));
+      console.log('Selected Players:', selectedPlayers.map((player) => player.name));
+      navigation.navigate('Confirm Selection', { selectedPlayers });
     } else {
-      Alert.alert('Please select a player.');
+      Alert.alert('Please select at least one player.');
     }
   };
 
@@ -42,7 +51,11 @@ const SelectPlayers = ({ route }) => {
       <TouchableOpacity onPress={() => handlePlayerPress(item)}>
         <View style={styles.playerItem}>
           <Text style={styles.playerName}>{item.name}</Text>
-          <RadioButton selected={selectedPlayerId === item.id} />
+          <Checkbox
+            status={selectedPlayerIds.includes(item.id) ? 'checked' : 'unchecked'} // Check the status based on selection
+            onPress={() => handlePlayerPress(item)}
+            color={colors.primaryBlue}
+          />
         </View>
       </TouchableOpacity>
     );
@@ -50,7 +63,7 @@ const SelectPlayers = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Select a Player</Text>
+      <Text style={styles.title}>Select Players</Text>
       <FlatList
         data={players}
         renderItem={renderPlayerItem}
@@ -65,6 +78,11 @@ const SelectPlayers = ({ route }) => {
     </View>
   );
 };
+
+
+
+
+
 
 const styles = StyleSheet.create({
   container: {
