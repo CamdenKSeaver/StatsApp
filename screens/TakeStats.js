@@ -13,9 +13,19 @@ import StatBox from '../App/components/StatBox';
 
 export default function TakeStats({ navigation, route }) {
   const [opponentTeamName, setOpponentTeamName] = useState('');
-
+  const [indexes, setIndexes] = useState([0, 1, 2, 3, 4, 5]);
+  const [stats, setStats] = useState(['atk','kill','err','ast', 'dig','blk', 'one','two','three'])
   const { teamName, players } = route.params;
   
+  
+  const onPress = (item) => {
+      if(item.id / 9 == 0){
+        players[indexes[0]].atk
+      }
+      
+
+  }
+
   useEffect(() => {
     ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
     return () => {
@@ -41,7 +51,7 @@ var width = 64.5;
       <View style={styles.container}>
         <View style={[styles.playerCont, { marginTop: '.3%' }]}>
           <View style ={styles.statRow}>
-          <Text style = { styles.nameSize}>{players[0].name}</Text>
+          <Text style = { styles.nameSize}>{players[indexes[0]].atk}</Text>
             <StatBox
             id={0}
             marginLeft={0}
@@ -101,7 +111,7 @@ var width = 64.5;
 
 
           <View style ={styles.statRow}>
-          <Text style = {styles.nameSize}>{players[1].name}</Text>
+          <Text style = {styles.nameSize}>{players[indexes[1]].name}</Text>
           <StatBox
             id={9}
             marginLeft={0}
@@ -160,7 +170,7 @@ var width = 64.5;
 
 
           <View style ={styles.statRow}>
-          <Text style ={styles.nameSize}>{players[2].name}</Text>
+          <Text style ={styles.nameSize}>{players[indexes[2]].name}</Text>
           <StatBox
             id={18}
             marginLeft={0}
@@ -219,7 +229,7 @@ var width = 64.5;
 
 
           <View style ={styles.statRow}>
-          <Text style={styles.nameSize}>{players[3].name}</Text>
+          <Text style={styles.nameSize}>{players[indexes[3]].name}</Text>
           <StatBox
             id={27}
             marginLeft={0}
@@ -278,7 +288,7 @@ var width = 64.5;
 
 
           <View style ={styles.statRow}>
-          <Text style={styles.nameSize}>{players[4].name}</Text>
+          <Text style={styles.nameSize}>{players[indexes[4]].name}</Text>
           <StatBox
             id={36}
             marginLeft={0}
@@ -337,7 +347,7 @@ var width = 64.5;
 
 
           <View style ={styles.statRow}>
-          <Text style ={styles.nameSize}>{players[5].name}</Text>
+          <Text style ={styles.nameSize}>{players[indexes[5]].name}</Text>
           <StatBox
             id={45}
             marginLeft={0}
