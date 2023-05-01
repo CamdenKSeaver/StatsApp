@@ -72,6 +72,9 @@ const handleAddPlayers = async () => {
     players: playerList,
   });
 
+  
+  
+
 
   let toast = Toast.show('Team Successfully Saved.', {
     duration: Toast.durations.SHORT, position: 125,
@@ -143,7 +146,7 @@ const handleAddPlayers = async () => {
           title='Save Team'
           width= {'40%'}
           height= {75}
-          onPress={handleAddPlayers}
+          onPress={[handleAddPlayers]}
         
         />
         <RootSiblingParent>

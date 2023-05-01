@@ -5,8 +5,35 @@ import { db } from '../App/config/firebase';
 import colors from '../App/config/colors';
 import { useNavigation } from '@react-navigation/native';
 import { RadioButton } from 'react-native-paper';
+import CustomMultiPicker from "react-native-multiple-select-list";
+import firestore from '@react-native-firebase/firestore';
+
+
+
+
 
 const SelectPlayers = ({ route }) => {
+
+  const playerList = [
+    'Glenn','Camden', 'Zuhayr'
+  ]
+
+  // useEffect(() => {
+  //   const unsubscribe = firestore()
+  //     .collection('collectionName')
+  //     .onSnapshot(querySnapshot => {
+  //       const items = [];
+  //       querySnapshot.forEach(documentSnapshot => {
+  //         const item = documentSnapshot.data();
+  //         items.push(item);
+  //       });
+  //       setData(items);
+  //     });
+  
+  //   return () => unsubscribe();
+  // }, []);
+  
+  
   const [players, setPlayers] = useState([]);
   const [selectedPlayerId, setSelectedPlayerId] = useState(null);
 
@@ -48,6 +75,7 @@ const SelectPlayers = ({ route }) => {
     );
   };
 
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Select a Player</Text>
@@ -62,7 +90,29 @@ const SelectPlayers = ({ route }) => {
           <Text style={styles.confirmButtonText}>Confirm</Text>
         </View>
       </TouchableOpacity>
+      <CustomMultiPicker
+    options={playerList}
+    search={true} 
+    multiple={true} 
+    placeholder={"Search"}
+    placeholderTextColor={'#757575'}
+    returnValue={"label"} 
+    callback={(res)=>{ console.log(res) }} 
+    rowBackgroundColor={"#eee"}
+    rowHeight={40}
+    rowRadius={5}
+    iconColor={"#00a2dd"}
+    iconSize={30}
+    selectedIconName={"ios-checkmark-circle-outline"}
+    unselectedIconName={"ios-radio-button-off-outline"}
+    scrollViewHeight={130}
+    selected={[1,2]} />
     </View>
+
+    
+  
+  
+    
   );
 };
 

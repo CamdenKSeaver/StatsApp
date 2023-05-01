@@ -17,15 +17,15 @@ export default function NewGame({ navigation, route }) {
 
     const [selected, setSelected] = React.useState("");
     
-    const data = [
-        {key:'1', value:'Fremd'},
-        {key:'2', value:'Palatine'},
-        {key:'3', value:'Rolling Meadows'},
-        {key:'4', value:'Scahumburg'},
-        {key:'5', value:'Conant'},
+    // const data = [
+    //     {key:'1', value:'Fremd'},
+    //     {key:'2', value:'Palatine'},
+    //     {key:'3', value:'Rolling Meadows'},
+    //     {key:'4', value:'Scahumburg'},
+    //     {key:'5', value:'Conant'},
         
-    ]
-    console.log(data);
+    // ]
+    // console.log(data);
   return (
     <View style={styles.container}>
      
