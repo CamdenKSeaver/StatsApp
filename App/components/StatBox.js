@@ -12,9 +12,11 @@ function StatBox({ title, onPress, onLongPress, width, height, marginTop, margin
   };
 
   const handleLongPress = () => {
-    setCount(count - 1);
-    if (onLongPress) {
-      onLongPress();
+    if (count > 0) {
+      setCount(count - 1);
+      if (onLongPress) {
+        onLongPress();
+      }
     }
   };
 
