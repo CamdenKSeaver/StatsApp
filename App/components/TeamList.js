@@ -7,7 +7,6 @@ import { useNavigation } from '@react-navigation/native';
 
 const TeamsList = () => {
   const [teams, setTeams] = useState([]);
-  
 
   useEffect(() => {
     const teamsQuery = query(collection(db, 'teams'));
@@ -32,13 +31,11 @@ const TeamsList = () => {
 
   const handleTeamPress = (team) => {
     console.log('Team selected ', team.name);
-    navigation.navigate('Select Players', { 
-      teamId: team.id, 
-      teamName: team.name, 
-      players: team.players 
+    navigation.navigate('Select Players', {
+      teamId: team.id,
+      teamName: team.name,
     });
   };
-  
 
   return (
     <FlatList
@@ -49,6 +46,7 @@ const TeamsList = () => {
     />
   );
 };
+
 
 const styles = {
   teamsList: {

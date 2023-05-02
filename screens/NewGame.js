@@ -13,70 +13,46 @@ import TeamsList from '../App/components/TeamList';
 
 
 export default function NewGame({ navigation, route }) {
-  
-
-    const [selected, setSelected] = React.useState("");
-    
-    // const data = [
-    //     {key:'1', value:'Fremd'},
-    //     {key:'2', value:'Palatine'},
-    //     {key:'3', value:'Rolling Meadows'},
-    //     {key:'4', value:'Scahumburg'},
-    //     {key:'5', value:'Conant'},
-        
-    // ]
-    // console.log(data);
   return (
     <View style={styles.container}>
-     
-        <Image
-          style= {{width: '90%', height:'9%',marginTop: '10%'}}
-          source={require('../App/assets/images/logo.png')} 
-          
-        />
-  
-      <View style={[styles.lineContainer, {marginTop: '6%'}]}>
-      </View>
-      <View style={[styles.buttonContainer,{marginTop: '0%'}]}>
-        <View style = {styles.row}>
+      <Image
+        style={{ width: '90%', height: '9%', marginTop: '10%' }}
+        source={require('../App/assets/images/logo.png')}
+      />
 
-        
-        <MyButton 
-          title='Create Team'
-          width= {'40%'}
-          height= {75}
-          onPress={() => {
-            navigation.navigate("Create Team")}}
-         />
-        
-        
-        
-   
-          <MyButton 
-            title='Back'
-            width= {'40%'}
-            height= {75}
-            marginLeft= {'3.33%'}
+      <View style={[styles.lineContainer, { marginTop: '6%' }]}></View>
+      <View style={[styles.buttonContainer, { marginTop: '0%' }]}>
+        <View style={styles.row}>
+          <MyButton
+            title="Create Team"
+            width={'40%'}
+            height={75}
             onPress={() => {
-              navigation.navigate("Home")}}
-           />
-        
-        
+              navigation.navigate('Create Team');
+            }}
+          />
+
+          <MyButton
+            title="Back"
+            width={'40%'}
+            height={75}
+            marginLeft={'3.33%'}
+            onPress={() => {
+              navigation.navigate('Home');
+            }}
+          />
         </View>
-        <Text style = {styles.text}>Select Team</Text>
+        <Text style={styles.text}>Select Team</Text>
       </View>
-      
-      
-      
-        
-       <View style = {styles.flatlist}>
-        <TeamsList></TeamsList>
+
+      <View style={styles.flatlist}>
+        <TeamsList />
       </View>
-     
+
       <StatusBar style="auto" />
     </View>
   );
-      }
+}
 
 const styles = StyleSheet.create({
   container: {

@@ -5,63 +5,26 @@ import { db } from '../App/config/firebase';
 import colors from '../App/config/colors';
 import { useNavigation } from '@react-navigation/native';
 import { RadioButton } from 'react-native-paper';
-import CustomMultiPicker from "react-native-multiple-select-list";
 import firestore from '@react-native-firebase/firestore';
 
-
-
-
-
 const SelectPlayers = ({ route }) => {
-
-  const playerList = [
-    'Glenn','Camden', 'Zuhayr'
-  ]
-
-  // useEffect(() => {
-  //   const unsubscribe = firestore()
-  //     .collection('collectionName')
-  //     .onSnapshot(querySnapshot => {
-  //       const items = [];
-  //       querySnapshot.forEach(documentSnapshot => {
-  //         const item = documentSnapshot.data();
-  //         items.push(item);
-  //       });
-  //       setData(items);
-  //     });
-  
-  //   return () => unsubscribe();
-  // }, []);
-  
-  
+  const { teamId, teamName } = route.params;
   const [players, setPlayers] = useState([]);
-  const [selectedPlayerId, setSelectedPlayerId] = useState(null);
-
-  const { teamId } = route.params;
+  const [selectedPlayers, setSelectedPlayers] = useState([]);
 
   useEffect(() => {
-    const playersQuery = query(collection(db, 'players'), where('teamId', '==', teamId));
+    const playersQuery = query(collection(db, 'teams'), where('name', '==', teamName));
     const unsubscribe = onSnapshot(playersQuery, (snapshot) => {
-      const playersData = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      const team = snapshot.docs[0]?.data();
+      const playersData = team?.players || [];
       setPlayers(playersData);
     });
     return unsubscribe;
-  }, [teamId]);
+  }, [teamName]);
 
-  const navigation = useNavigation();
-
-  const handlePlayerPress = (player) => {
-    setSelectedPlayerId(player.id);
-  };
-
-  const handleConfirmPress = () => {
-    if (selectedPlayerId) {
-      const selectedPlayer = players.find((player) => player.id === selectedPlayerId);
-      console.log('Selected Player:', selectedPlayer.name);
-      navigation.navigate('Confirm Selection', { selectedPlayer });
-    } else {
-      Alert.alert('Please select a player.');
-    }
+  const handleConfirm = () => {
+    // Perform any desired action with the selected players
+    console.log('Selected Players:', selectedPlayers);
   };
 
   const renderPlayerItem = ({ item }) => {
@@ -69,52 +32,41 @@ const SelectPlayers = ({ route }) => {
       <TouchableOpacity onPress={() => handlePlayerPress(item)}>
         <View style={styles.playerItem}>
           <Text style={styles.playerName}>{item.name}</Text>
-          <RadioButton selected={selectedPlayerId === item.id} />
+          <RadioButton
+            value={item.name}
+            status={selectedPlayers.includes(item.name) ? 'checked' : 'unchecked'}
+            onPress={() => handlePlayerPress(item)}
+          />
         </View>
       </TouchableOpacity>
     );
   };
 
+  const handlePlayerPress = (player) => {
+    const selected = selectedPlayers.includes(player.name);
+    if (selected) {
+      setSelectedPlayers(selectedPlayers.filter((name) => name !== player.name));
+    } else {
+      setSelectedPlayers([...selectedPlayers, player.name]);
+    }
+  };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Select a Player</Text>
+      <Text style={styles.title}>Select Players from {teamName}</Text>
       <FlatList
         data={players}
         renderItem={renderPlayerItem}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.number.toString()}
         style={styles.playersList}
       />
-      <TouchableOpacity onPress={handleConfirmPress}>
-        <View style={styles.confirmButton}>
-          <Text style={styles.confirmButtonText}>Confirm</Text>
-        </View>
+      <TouchableOpacity style={[styles.confirmButton, {marginBottom:50}]} onPress={handleConfirm}>
+        <Text style={styles.confirmButtonText}>Confirm</Text>
       </TouchableOpacity>
-      <CustomMultiPicker
-    options={playerList}
-    search={true} 
-    multiple={true} 
-    placeholder={"Search"}
-    placeholderTextColor={'#757575'}
-    returnValue={"label"} 
-    callback={(res)=>{ console.log(res) }} 
-    rowBackgroundColor={"#eee"}
-    rowHeight={40}
-    rowRadius={5}
-    iconColor={"#00a2dd"}
-    iconSize={30}
-    selectedIconName={"ios-checkmark-circle-outline"}
-    unselectedIconName={"ios-radio-button-off-outline"}
-    scrollViewHeight={130}
-    selected={[1,2]} />
     </View>
-
-    
-  
-  
-    
   );
 };
+
 
 const styles = StyleSheet.create({
   container: {
