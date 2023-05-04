@@ -11,6 +11,7 @@ const SelectPlayers = ({ route }) => {
   const { teamId, teamName } = route.params;
   const [players, setPlayers] = useState([]);
   const [selectedPlayers, setSelectedPlayers] = useState([]);
+  const [selectedPlayersCount, setSelectedPlayersCount] = useState(0);
 
   useEffect(() => {
     const playersQuery = query(collection(db, 'teams'), where('name', '==', teamName));
@@ -23,7 +24,7 @@ const SelectPlayers = ({ route }) => {
   }, [teamName]);
 
   const handleConfirm = () => {
-    // Perform any desired action with the selected players
+  
     console.log('Selected Players:', selectedPlayers);
   };
 
@@ -43,11 +44,18 @@ const SelectPlayers = ({ route }) => {
   };
 
   const handlePlayerPress = (player) => {
+    if (selectedPlayersCount === 6 && !selectedPlayers.includes(player.name)) {
+      Alert.alert('Maximum Players Selected', 'You can only select 6 players.');
+      return;
+    }
+
     const selected = selectedPlayers.includes(player.name);
     if (selected) {
       setSelectedPlayers(selectedPlayers.filter((name) => name !== player.name));
+      setSelectedPlayersCount(selectedPlayersCount - 1);
     } else {
       setSelectedPlayers([...selectedPlayers, player.name]);
+      setSelectedPlayersCount(selectedPlayersCount + 1);
     }
   };
 
@@ -60,12 +68,17 @@ const SelectPlayers = ({ route }) => {
         keyExtractor={(item) => item.number.toString()}
         style={styles.playersList}
       />
-      <TouchableOpacity style={[styles.confirmButton, {marginBottom:50}]} onPress={handleConfirm}>
+      <TouchableOpacity
+        style={[styles.confirmButton, { marginBottom: 50 }]}
+        onPress={handleConfirm}
+        disabled={selectedPlayersCount !== 6}
+      >
         <Text style={styles.confirmButtonText}>Confirm</Text>
       </TouchableOpacity>
     </View>
   );
 };
+
 
 
 const styles = StyleSheet.create({

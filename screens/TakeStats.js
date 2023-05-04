@@ -51,7 +51,7 @@ var width = 64.5;
       <View style={styles.container}>
         <View style={[styles.playerCont, { marginTop: '.3%' }]}>
           <View style ={styles.statRow}>
-          <Text style = { styles.nameSize}>{players[indexes[0]].atk}</Text>
+          <Text style = { styles.nameSize}>{players[indexes[0]].name}</Text>
             <StatBox
             id={0}
             marginLeft={0}

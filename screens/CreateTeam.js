@@ -64,7 +64,7 @@ export default function CreateTeam({ navigation, route }) {
 
 const handleAddPlayers = async () => {
  
-  const playerList = [    { number: player1Number, name: player1Name },    { number: player2Number, name: player2Name },    { number: player3Number, name: player3Name },    { number: player4Number, name: player4Name },    { number: player5Number, name: player5Name },    { number: player6Number, name: player6Name },    { number: player7Number, name: player7Name },    { number: player8Number, name: player8Name },    { number: player9Number, name: player9Name },    { number: player10Number, name: player10Name },    { number: player11Number, name: player11Name },    { number: player12Number, name: player12Name },    { number: player13Number, name: player13Name },    { number: player14Number, name: player14Name },    { number: player15Number, name: player15Name },    { number: player16Number, name: player16Name },    { number: player17Number, name: player17Name },    { number: player18Number, name: player18Name },  ];
+  const playerList = [    { number: player1Number, name: player1Name },    { number: player2Number, name: player2Name },    { number: player3Number, name: player3Name },    { number: player4Number, name: player4Name },    { number: player5Number, name: player5Name },    { number: player6Number, name: player6Name },    { number: player7Number, name: player7Name },    { number: player8Number, name: player8Name },    { number: player9Number, name: player9Name },    { number: player10Number, name: player10Name },    { number: player11Number, name: player11Name },    { number: player12Number, name: player12Name },    { number: player13Number, name: player13Name },    { number: player14Number, name: player14Name },    { number: player15Number, name: player15Name },    { number: player16Number, name: player16Name },    { number: player17Number, name: player17Name },    { number: player18Number, name: player18Name }, ].filter((player) => player.name !== '');
 
  
   const docRef = await addDoc(collection(db,'teams'), {
@@ -146,7 +146,7 @@ const handleAddPlayers = async () => {
           title='Save Team'
           width= {'40%'}
           height= {75}
-          onPress={[handleAddPlayers]}
+          onPress={handleAddPlayers}
         
         />
         <RootSiblingParent>
