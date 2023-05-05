@@ -7,6 +7,8 @@ import { useNavigation } from '@react-navigation/native';
 import { RadioButton } from 'react-native-paper';
 import firestore from '@react-native-firebase/firestore';
 
+import { MaterialIcons } from '@expo/vector-icons';
+
 const SelectPlayers = ({ route }) => {
   const { teamId, teamName } = route.params;
   const [players, setPlayers] = useState([]);
@@ -32,9 +34,10 @@ const SelectPlayers = ({ route }) => {
       <TouchableOpacity onPress={() => handlePlayerPress(item)}>
         <View style={styles.playerItem}>
           <Text style={styles.playerName}>{item.name}</Text>
-          <RadioButton
-            value={item.name}
-            status={selectedPlayers.includes(item.name) ? 'checked' : 'unchecked'}
+          <MaterialIcons
+            name={selectedPlayers.includes(item.name) ? 'radio-button-checked' : 'radio-button-unchecked'}
+            size={24}
+            color={colors.primaryBlue}
             onPress={() => handlePlayerPress(item)}
           />
         </View>
@@ -53,6 +56,7 @@ const SelectPlayers = ({ route }) => {
 
   return (
     <View style={styles.container}>
+      <View style={styles.backgroundImage}></View>
       <Text style={styles.title}>Select Players from {teamName}</Text>
       <FlatList
         data={players}
@@ -60,7 +64,7 @@ const SelectPlayers = ({ route }) => {
         keyExtractor={(item) => item.number.toString()}
         style={styles.playersList}
       />
-      <TouchableOpacity style={[styles.confirmButton, {marginBottom:50}]} onPress={handleConfirm}>
+      <TouchableOpacity style={styles.confirmButton} onPress={handleConfirm}>
         <Text style={styles.confirmButtonText}>Confirm</Text>
       </TouchableOpacity>
     </View>
@@ -68,19 +72,21 @@ const SelectPlayers = ({ route }) => {
 };
 
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    paddingTop: 20,
+    backgroundColor: '#F7F8FA',
+    paddingHorizontal: 20,
+    paddingTop: 40,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     color: colors.primaryBlue,
-    marginBottom: 20,
+    marginBottom: 20,    
+    marginLeft: 20,
+    marginRight: 20,
   },
   playersList: {
     flex: 1,
@@ -94,6 +100,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
+    
   },
   playerName: {
     fontSize: 18,
@@ -101,18 +108,27 @@ const styles = StyleSheet.create({
     color: colors.darkGray,
 
   },
+
+  header: {
+    alignItems: 'center',
+    marginBottom: 20,
+  },
   confirmButton: {
     backgroundColor: colors.primaryBlue,
     paddingHorizontal: 30,
     paddingVertical: 10,
     borderRadius: 5,
     marginTop: 20,
+    alignItems: 'center',
+
   },
   confirmButtonText: {
     fontSize: 18,
     fontWeight: 'bold',
     color: '#fff',
+    alignItems: 'center',
   },
+  
 });
 
 export default SelectPlayers;
