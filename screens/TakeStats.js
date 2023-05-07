@@ -9,6 +9,9 @@ import { SafeAreaView } from 'react-native';
 import Table from '../App/components/Table';
 import { AntDesign } from '@expo/vector-icons';
 import StatBox from '../App/components/StatBox';
+import { Player } from '../App/components/Player';
+import { db } from '../App/config/firebase';
+
 
 
 export default function TakeStats({ navigation, route }) {
@@ -19,9 +22,10 @@ export default function TakeStats({ navigation, route }) {
   
   
   const onPress = (item) => {
-      if(item.id / 9 == 0){
-        players[indexes[0]].atk
-      }
+     
+        players[0]['atk']=12
+        console.log(players)
+      db.ref('/teams/vXyMSh4YlLW2n1yG1qYe').update()
       
 
   }
@@ -57,6 +61,7 @@ var width = 64.5;
             marginLeft={0}
                 width ={width}
                 height ={50}
+                onPress={onPress}
             />
             <StatBox
             id={1}

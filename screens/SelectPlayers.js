@@ -22,11 +22,18 @@ const SelectPlayers = ({ route }) => {
     });
     return unsubscribe;
   }, [teamName]);
-
-  const handleConfirm = () => {
-  
-    console.log('Selected Players:', selectedPlayers);
-  };
+  const navigation = useNavigation();
+ const handleConfirm = () => {
+  if (selectedPlayersCount === 6) {
+    const selectedPlayersData = players.filter((player) => selectedPlayers.includes(player.name));
+    navigation.navigate('Take Stats', {
+      teamName: teamName,
+      players: selectedPlayersData,
+    });
+  } else {
+    Alert.alert('Select Players', 'Please select 6 players to proceed.');
+  }
+};
 
   const renderPlayerItem = ({ item }) => {
     return (
