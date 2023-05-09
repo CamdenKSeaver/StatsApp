@@ -12,6 +12,7 @@ import Player from "./App/components/Player";
 import { useState } from 'react';
 import TakeStats from "./screens/TakeStats"
 import { ReactNativeFirebaseApp } from '@react-native-firebase/app';
+import GameDisplay from "./screens/GameDisplay";
 
 
 
@@ -54,6 +55,11 @@ export default function App() {
         <Stack.Screen 
           name="Select Players"
           component={SelectPlayers}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen 
+          name="Game Display"
+          component={GameDisplay}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

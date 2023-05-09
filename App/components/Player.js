@@ -3,19 +3,19 @@ import { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
 class Player {
-  constructor(name, number,atk,kill,err,ast,dig,blk,one,two,three) {
-    this.name = name;
-    this.number = number;
-    atk =0;
-    kill=0;
-    err=0;
-    ast=0;
-    dig=0;
-    blk=0;
-    one=0;
-    two=0;
-    three=0;
+  name;
+  number;
 
+   
+    
+   
+   constructor(name, number) {
+    
+    this.playername = name;
+    this.number = number;
+    console.log('construictin object')
+    
+    
     
   }
 }
