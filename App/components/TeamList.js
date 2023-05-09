@@ -30,8 +30,8 @@ const TeamsList = () => {
   };
 
   const handleTeamPress = (team) => {
-    console.log('Team selected', team.name);
-    navigation.navigate('Select Players',{
+    console.log('Team selected ', team.name);
+    navigation.navigate('Select Players', {
       teamId: team.id,
       teamName: team.name,
     });
