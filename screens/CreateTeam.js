@@ -195,7 +195,7 @@ const handleAddPlayers = async () => {
         <TextInput style = {styles.textBox}
           placeholder='Athlete Name'
           value={player1Name}
-        onChangeText={(text) => setPlayer1Name(text)}
+          onChangeText={(text) => setPlayer1Name(text.replace(/[^A-Za-z]/g, ''))}
         />
       
       <View style = {styles.textCont}>
@@ -205,7 +205,7 @@ const handleAddPlayers = async () => {
         <TextInput style = {styles.numTextBox}
           placeholder="Num"
           value={player1Number}
-          onChangeText={(text) => setPlayer1Number(text)}
+          onChangeText={(text) => setPlayer1Number(text.replace(/[^0-9]/g, ''))}
         />
 
     </View>
@@ -215,7 +215,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.textBox}
         placeholder='Athlete Name'
           value={player2Name}
-          onChangeText={(text) => setPlayer2Name(text)}
+          onChangeText={(text) => setPlayer2Name(text.replace(/[^A-Za-z]/g, ''))}
       />
     
     <View style = {styles.textCont}>
@@ -225,7 +225,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.numTextBox}
         placeholder="Num"
         value={player2Number}
-        onChangeText={(text) => setPlayer2Number(text)}
+        onChangeText={(text) => setPlayer2Number(text.replace(/[^0-9]/g, ''))}
       />
 
   </View>
@@ -234,7 +234,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.textBox}
         placeholder='Athlete Name'
         value={player3Name}
-        onChangeText={(text) => setPlayer3Name(text)}
+        onChangeText={(text) => setPlayer3Name(text.replace(/[^A-Za-z]/g, ''))}
       />
     
     <View style = {styles.textCont}>
@@ -244,7 +244,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.numTextBox}
         placeholder="Num"
         value={player3Number}
-        onChangeText={(text) => setPlayer3Number(text)}
+        onChangeText={(text) => setPlayer3Number(text.replace(/[^0-9]/g, ''))}
       />
 
   </View>
@@ -253,7 +253,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.textBox}
         placeholder='Athlete Name'
         value={player4Name}
-        onChangeText={(text) => setPlayer4Name(text)}
+        onChangeText={(text) => setPlayer4Name(text.replace(/[^A-Za-z]/g, ''))}
       />
     
     <View style = {styles.textCont}>
@@ -263,7 +263,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.numTextBox}
         placeholder="Num"
         value={player4Number}
-        onChangeText={(text) => setPlayer4Number(text)}
+        onChangeText={(text) => setPlayer4Number(text.replace(/[^0-9]/g, ''))}
       />
 
   </View>
@@ -272,7 +272,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.textBox}
         placeholder='Athlete Name'
         value={player5Name}
-        onChangeText={(text) => setPlayer5Name(text)}
+        onChangeText={(text) => setPlayer5Name(text.replace(/[^A-Za-z]/g, ''))}
       />
     
     <View style = {styles.textCont}>
@@ -282,7 +282,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.numTextBox}
         placeholder="Num"
         value={player5Number}
-        onChangeText={(text) => setPlayer5Number(text)}
+        onChangeText={(text) => setPlayer5Number(text.replace(/[^0-9]/g, ''))}
       />
 
   </View>
@@ -291,7 +291,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.textBox}
         placeholder='Athlete Name'
         value={player6Name}
-        onChangeText={(text) => setPlayer6Name(text)}
+        onChangeText={(text) => setPlayer6Name(text.replace(/[^A-Za-z]/g, ''))}
       />
     
     <View style = {styles.textCont}>
@@ -301,7 +301,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.numTextBox}
         placeholder="Num"
         value={player6Number}
-        onChangeText={(text) => setPlayer6Number(text)}
+        onChangeText={(text) => setPlayer6Number(text.replace(/[^0-9]/g, ''))}
       />
 
   </View>
@@ -310,7 +310,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.textBox}
         placeholder='Athlete Name'
         value={player7Name}
-        onChangeText={(text) => setPlayer7Name(text)}
+        onChangeText={(text) => setPlayer7Name(text.replace(/[^A-Za-z]/g, ''))}
       />
     
     <View style = {styles.textCont}>
@@ -320,7 +320,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.numTextBox}
         placeholder="Num"
         value={player7Number}
-        onChangeText={(text) => setPlayer7Number(text)}
+        onChangeText={(text) => setPlayer7Number(text.replace(/[^0-9]/g, ''))}
       />
 
   </View>
@@ -330,7 +330,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.textBox}
         placeholder='Athlete Name'
         value={player8Name}
-        onChangeText={(text) => setPlayer8Name(text)}
+        onChangeText={(text) => setPlayer8Name(text.replace(/[^A-Za-z]/g, ''))}
       />
     
     <View style = {styles.textCont}>
@@ -340,7 +340,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.numTextBox}
         placeholder="Num" 
         value={player8Number}
-        onChangeText={(text) => setPlayer8Number(text)}
+        onChangeText={(text) => setPlayer8Number(text.replace(/[^0-9]/g, ''))}
       />
 
   </View>
@@ -349,7 +349,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.textBox}
         placeholder='Athlete Name'
         value={player9Name}
-        onChangeText={(text) => setPlayer9Name(text)}
+        onChangeText={(text) => setPlayer9Name(text.replace(/[^A-Za-z]/g, ''))}
       />
     
     <View style = {styles.textCont}>
@@ -359,7 +359,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.numTextBox}
         placeholder="Num"
         value={player9Number}
-        onChangeText={(text) => setPlayer9Number(text)}
+        onChangeText={(text) => setPlayer9Number(text.replace(/[^0-9]/g, ''))}
       />
 
   </View>
@@ -368,7 +368,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.textBox}
         placeholder='Athlete Name'
         value={player10Name}
-        onChangeText={(text) => setPlayer10Name(text)}
+        onChangeText={(text) => setPlayer10Name(text.replace(/[^A-Za-z]/g, ''))}
       />
     
     <View style = {styles.textCont}>
@@ -378,7 +378,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.numTextBox}
         placeholder="Num"
         value={player10Number}
-        onChangeText={(text) => setPlayer10Number(text)}
+        onChangeText={(text) => setPlayer10Number(text.replace(/[^0-9]/g, ''))}
       />
 
   </View>
@@ -388,7 +388,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.textBox}
         placeholder='Athlete Name'
         value={player11Name}
-        onChangeText={(text) => setPlayer11Name(text)}
+        onChangeText={(text) => setPlayer11Name(text.replace(/[^A-Za-z]/g, ''))}
       />
     
     <View style = {styles.textCont}>
@@ -398,7 +398,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.numTextBox}
         placeholder="Num"
         value={player11Number}
-        onChangeText={(text) => setPlayer11Number(text)}
+        onChangeText={(text) => setPlayer11Number(text.replace(/[^0-9]/g, ''))}
       />
 
   </View>
@@ -407,7 +407,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.textBox}
         placeholder='Athlete Name'
         value={player12Name}
-        onChangeText={(text) => setPlayer12Name(text)}
+        onChangeText={(text) => setPlayer12Name(text.replace(/[^A-Za-z]/g, ''))}
       />
     
     <View style = {styles.textCont}>
@@ -417,7 +417,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.numTextBox}
         placeholder="Num"
         value={player12Number}
-        onChangeText={(text) => setPlayer12Number(text)}
+        onChangeText={(text) => setPlayer12Number(text.replace(/[^0-9]/g, ''))}
       />
 
   </View>
@@ -426,7 +426,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.textBox}
         placeholder='Athlete Name'
         value={player13Name}
-        onChangeText={(text) => setPlayer13Name(text)}
+        onChangeText={(text) => setPlayer13Name(text.replace(/[^A-Za-z]/g, ''))}
       />
     
     <View style = {styles.textCont}>
@@ -436,7 +436,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.numTextBox}
         placeholder="Num"
         value={player13Number}
-        onChangeText={(text) => setPlayer13Number(text)}
+        onChangeText={(text) => setPlayer13Number(text.replace(/[^0-9]/g, ''))}
       />
 
   </View>
@@ -445,7 +445,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.textBox}
         placeholder='Athlete Name'
         value={player14Name}
-        onChangeText={(text) => setPlayer14Name(text)}
+        onChangeText={(text) => setPlayer14Name(text.replace(/[^A-Za-z]/g, ''))}
       />
     
     <View style = {styles.textCont}>
@@ -455,7 +455,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.numTextBox}
         placeholder="Num"
         value={player14Number}
-        onChangeText={(text) => setPlayer14Number(text)}
+        onChangeText={(text) => setPlayer14Number(text.replace(/[^0-9]/g, ''))}
       />
 
   </View>
@@ -464,7 +464,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.textBox}
         placeholder='Athlete Name'
         value={player15Name}
-        onChangeText={(text) => setPlayer15Name(text)}
+        onChangeText={(text) => setPlayer15Name(text.replace(/[^A-Za-z]/g, ''))}
       />
     
     <View style = {styles.textCont}>
@@ -474,7 +474,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.numTextBox}
         placeholder="Num"
         value={player15Number}
-        onChangeText={(text) => setPlayer15Number(text)}
+        onChangeText={(text) => setPlayer15Number(text.replace(/[^0-9]/g, ''))}
       />
 
   </View>
@@ -483,7 +483,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.textBox}
         placeholder='Athlete Name'
         value={player16Name}
-        onChangeText={(text) => setPlayer16Name(text)}
+        onChangeText={(text) => setPlayer16Name(text.replace(/[^A-Za-z]/g, ''))}
       />
     
     <View style = {styles.textCont}>
@@ -493,7 +493,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.numTextBox}
         placeholder="Num"
         value={player16Number}
-        onChangeText={(text) => setPlayer16Number(text)}
+        onChangeText={(text) => setPlayer16Number(text.replace(/[^0-9]/g, ''))}
       />
 
   </View>
@@ -503,7 +503,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.textBox}
         placeholder='Athlete Name'
         value={player17Name}
-        onChangeText={(text) => setPlayer17Name(text)}
+        onChangeText={(text) => setPlayer17Name(text.replace(/[^A-Za-z]/g, ''))}
       />
     
     <View style = {styles.textCont}>
@@ -513,7 +513,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.numTextBox}
         placeholder="Num"
         value={player17Number}
-        onChangeText={(text) => setPlayer17Number(text)}
+        onChangeText={(text) => setPlayer17Number(text.replace(/[^0-9]/g, ''))}
       />
 
   </View>
@@ -522,7 +522,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.textBox}
         placeholder='Athlete Name'
         value={player18Name}
-        onChangeText={(text) => setPlayer18Name(text)}
+        onChangeText={(text) => setPlayer18Name(text.replace(/[^A-Za-z]/g, ''))}
       />
     
     <View style = {styles.textCont}>
@@ -532,7 +532,7 @@ const handleAddPlayers = async () => {
       <TextInput style = {styles.numTextBox}
         placeholder="Num"
         value={player18Number}
-        onChangeText={(text) => setPlayer18Number(text)}
+        onChangeText={(text) => setPlayer18Number(text.replace(/[^0-9]/g, ''))}
       />
 
   </View>

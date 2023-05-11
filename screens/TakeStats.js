@@ -13,7 +13,7 @@ import { Player } from '../App/components/Player';
 import { db } from '../App/config/firebase';
 import { collection, addDoc } from 'firebase/firestore';
 import GameDisplay from './GameDisplay';
-
+import { Alert } from 'react-native';
 
 export default function TakeStats({ navigation, route }) {
   const [opponentTeamName, setOpponentTeamName] = useState('');
@@ -28,20 +28,27 @@ export default function TakeStats({ navigation, route }) {
     players[Math.floor(id / 9)][stats[((id) % 9)]]--
 
   }
- 
   const saveGame = async () => {
     try {
-     
-      ToastAndroid.show('Saving...', ToastAndroid.SHORT);
-      
       const docRef = await addDoc(collection(db, 'games'), {
         name: teamName + ' vs ' + opponentTeamName,
         players: players,
       });
       console.log(players);
-      navigation.navigate('Game Display',{ players: players});
-    
-   
+  
+      Alert.alert(
+        'Game Saved',
+        'Your game has been saved. You can view it in View Games.',
+        [
+          {
+            text: 'OK',
+            onPress: async () => {
+              await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
+              navigation.navigate('Home');
+            },
+          },
+        ]
+      );
     } catch (error) {
       console.log('Error saving game: Make sure Opponent team name is logged', error);
       ToastAndroid.show('Error saving game: Make sure Opponent team name is logged', ToastAndroid.SHORT);

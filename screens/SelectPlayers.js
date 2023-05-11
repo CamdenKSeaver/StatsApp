@@ -5,7 +5,6 @@ import { db } from '../App/config/firebase';
 import colors from '../App/config/colors';
 import { useNavigation } from '@react-navigation/native';
 import { RadioButton } from 'react-native-paper';
-import firestore from '@react-native-firebase/firestore';
 
 const SelectPlayers = ({ route }) => {
   const { teamId, teamName } = route.params;
@@ -22,18 +21,20 @@ const SelectPlayers = ({ route }) => {
     });
     return unsubscribe;
   }, [teamName]);
+
   const navigation = useNavigation();
- const handleConfirm = () => {
-  if (selectedPlayersCount === 6) {
-    const selectedPlayersData = players.filter((player) => selectedPlayers.includes(player.name));
-    navigation.navigate('Take Stats', {
-      teamName: teamName,
-      players: selectedPlayersData,
-    });
-  } else {
-    Alert.alert('Select Players', 'Please select 6 players to proceed.');
-  }
-};
+
+  const handleConfirm = () => {
+    if (selectedPlayersCount === 6) {
+      const selectedPlayersData = players.filter((player) => selectedPlayers.includes(player.name));
+      navigation.navigate('Take Stats', {
+        teamName: teamName,
+        players: selectedPlayersData,
+      });
+    } else {
+      Alert.alert('Select Players', 'Please select 6 players to proceed.');
+    }
+  };
 
   const renderPlayerItem = ({ item }) => {
     return (
@@ -42,6 +43,7 @@ const SelectPlayers = ({ route }) => {
           <Text style={styles.playerName}>{item.name}</Text>
           <RadioButton
             value={item.name}
+            color={colors.primaryBlue}
             status={selectedPlayers.includes(item.name) ? 'checked' : 'unchecked'}
             onPress={() => handlePlayerPress(item)}
           />
@@ -68,7 +70,8 @@ const SelectPlayers = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Select Players from {teamName}</Text>
+      <Text style={styles.title}>Select Starting Players from </Text>
+      <Text style={styles.title}>{teamName}</Text>
       <FlatList
         data={players}
         renderItem={renderPlayerItem}
@@ -76,22 +79,26 @@ const SelectPlayers = ({ route }) => {
         style={styles.playersList}
       />
       <TouchableOpacity
-        style={[styles.confirmButton, { marginBottom: 50 }]}
+        style={[styles.confirmButton, { opacity: selectedPlayersCount === 6 ? 1 : 0.5 }]}
         onPress={handleConfirm}
         disabled={selectedPlayersCount !== 6}
       >
         <Text style={styles.confirmButtonText}>Confirm</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => navigation.navigate('New Game')}
+       
+      >
+        <Text style={styles.confirmButtonText}>Back</Text>
+      </TouchableOpacity>
     </View>
   );
 };
-
-
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
     backgroundColor: '#fff',
     alignItems: 'center',
     paddingTop: 20,
@@ -119,20 +126,36 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: colors.darkGray,
-
   },
   confirmButton: {
     backgroundColor: colors.primaryBlue,
     paddingHorizontal: 30,
     paddingVertical: 10,
     borderRadius: 5,
+    width: 250,
     marginTop: 20,
+    marginBottom: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  backButton: {
+    backgroundColor: colors.primaryBlue,
+    paddingHorizontal: 30,
+    paddingVertical: 10,
+    borderRadius: 5,
+    width: 150,
+    marginTop: 20,
+    marginBottom: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   confirmButtonText: {
     fontSize: 18,
     fontWeight: 'bold',
+    
     color: '#fff',
   },
 });
 
 export default SelectPlayers;
+
